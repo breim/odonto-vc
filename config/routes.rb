@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
 
-  namespace :api, path: 'v1' do
-    resources :users
+  namespace :api, path: 'api/v1', constraints: { format: 'json' } do
+    resources :users, only: :create
   end
 end

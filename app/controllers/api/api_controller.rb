@@ -1,12 +1,10 @@
+# frozen_string_literal: true
+
 # app/controllers/api/api_controller.rb
 module Api
   # ApiController
   class ApiController < ApplicationController
     protect_from_forgery
-
-    # OAuth Code
-    include Security
-    before_action :set_client
 
     # Object not found
     rescue_from ActiveRecord::RecordNotFound, with: :object_not_found
@@ -22,11 +20,6 @@ module Api
       render body: 'You do not have enough quotas to create this record, please contact our support to get more quotas', status: 401
     end
 
-    def set_client
-      @user = User.find_by_token(request.headers['token'])
-      render body: 'Unauthorized - Check your credentials', status: 401 if @user.nil? || @user.disabled?
-    end
-
     def object_not_found
       render body: 'Object not found', status: 403
     end
@@ -40,6 +33,7 @@ module Api
 
     def cors_preflight_check
       return unless request.method == 'OPTIONS'
+
       headers['Access-Control-Allow-Origin'] = '*'
       headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
       headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
