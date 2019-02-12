@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 # Auth
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Minify controllers
 gem 'responders'
 # Serializer API

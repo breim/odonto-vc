@@ -10,6 +10,9 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'a880315c23210f3d6afcd7c67467637959e570d93cd8eac85ad25b7130b34c45fa511aaa398dd194dc1cb9b32fcd667c409776ca1f8bda0473922fb6c7eecbc1'
 
+  # Ominiauth
+  config.omniauth :facebook, ENV['facebok_app_id'], ENV['facebook_app_secret'], callback_url: ENV['facebook_callback_url']
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
