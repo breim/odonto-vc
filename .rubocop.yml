@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - db/**/**
+    - config/spring.rb
+    - bin/**
+    - config/environments/**
+    - test/**/**
+Metrics/LineLength:
+  Max: 170
+Metrics/MethodLength:
+  Max: 40
+Metrics/AbcSize:
+  Max: 50
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'namespace']
+Style/Lambda:
+  Enabled: false
+Documentation:
+  Enabled: false
