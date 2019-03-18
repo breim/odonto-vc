@@ -6924,7 +6924,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .section_container .intro_content h1 {
-  font-size: 50px;
+  font-size: 42px;
   letter-spacing: -0.20px;
   line-height: 70px;
   margin-bottom: 16px;
@@ -14352,6 +14352,19 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /*=========== blog sidebar css ===========*/
+
+.logo-withe{
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo-black{
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 .widget_title {
   margin-bottom: 35px;
 }
