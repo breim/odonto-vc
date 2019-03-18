@@ -12,17 +12,27 @@
         <li class="clearfix"></li>
         <li class="<%= current_link_helper('campaigns') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-bullhorn"></i><span class="hide-menu">Campaigns</span>
+            <i class="fa fa-calendar"></i><span class="hide-menu">Agenda</span>
           <% end %>
         </li>
         <li class="<%= current_link_helper('users') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-users"></i><span class="hide-menu">Users</span>
+            <i class="fa fa-user-circle"></i><span class="hide-menu">Pacientes</span>
           <% end %>
         </li>
         <li class="<%= current_link_helper('templates') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-picture-o"></i><span class="hide-menu">Templates</span>
+            <i class="fa fa-circle fa-usd"></i><span class="hide-menu">Financeiro</span>
+          <% end %>
+        </li>
+        <li class="<%= current_link_helper('templates') %>">
+          <%= link_to root_path do %>
+            <i class="fa fa-file-text-o"></i><span class="hide-menu">Atestados</span>
+          <% end %>
+        </li>
+        <li class="<%= current_link_helper('templates') %>">
+          <%= link_to root_path do %>
+            <i class="fa fa-list-alt"></i><span class="hide-menu">Reciboos</span>
           <% end %>
         </li>
       </ul>
