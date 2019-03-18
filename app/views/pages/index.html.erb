@@ -1,13 +1,425 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="wrapper">
+  <header class="header_area">
+    <nav class="navbar navbar-expand-lg menu_one menu_eight">
+      <div class="container">
+        <a class="navbar-brand sticky_logo" href="#"><img src="pages/logo2.png" srcset="pages/logo2.png 2x" alt="logo"><img src="pages/logo.png" srcset="pages/logo2x.png 2x" alt=""></a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="menu_toggle">
+            <span class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="hamburger-cross">
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </button>
 
-<% if user_signed_in? %>
-  <li>
-    Hello, <%= current_user.name %> <br/>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-  </li>
-<% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav menu w_menu ml-auto">
+           <li class="nav-item dropdown submenu active">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="home-project-management.html" class="nav-link">Project Management</a></li>
+              <li class="nav-item"><a href="home-mail.html" class="nav-link">Mail</a></li>
+              <li class="nav-item"><a href="home-prototyping.html" class="nav-link">Prototyping</a></li>
+              <li class="nav-item"><a href="home-digital-marketing.html" class="nav-link">Digital Marketing</a></li>
+              <li class="nav-item"><a href="home-cloud.html" class="nav-link">Cloud</a></li>
+              <li class="nav-item"><a href="home-software-dark.html" class="nav-link">Software (dark)</a></li>
+              <li class="nav-item"><a href="home-app-showcase.html" class="nav-link">App Showcase</a></li>
+              <li class="nav-item"><a href="home-startup.html" class="nav-link">Startup</a></li>
+              <li class="nav-item"><a href="home-payment-processing.html" class="nav-link">Payment processing</a></li>
+              <li class="nav-item active"><a href="home-saas.html" class="nav-link">Saas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown submenu mega_menu">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Portfolio
+           </a>
+           <ul class="dropdown-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Portfolio Grid</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="portfolio-grid-2col.html" class="nav-link">Style 1 (2 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-3columns.html" class="nav-link">Style 1 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-4columns.html" class="nav-link">Style 1 (4 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-2col-2.html" class="nav-link">Style 2 (2 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-2col-3.html" class="nav-link">Style 2 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-2col-4.html" class="nav-link">Style 2 (4 columns)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Portfolio Fluid</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="portfolio-fullwidth-3columns.html" class="nav-link">Style 1 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-fullwidth-4columns.html" class="nav-link">Style 1 (4 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-fullwidth1.html" class="nav-link">Style 2 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-grid-fullwidth2.html" class="nav-link">Style 2 (4 columns)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Portfolio Masonry</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="portfolio-mas-2col.html" class="nav-link">Style 1 (2 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-mas-3col.html" class="nav-link">Style 1 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-mas-4col.html" class="nav-link">Style 1 (4 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-mas-3col-2.html" class="nav-link">Style 2 (3 columns)</a></li>
+                <li class="nav-item"><a href="portfolio-mas-4col-2.html" class="nav-link">Style 2 (4 columns)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Project details</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="portfolio-details-1.html" class="nav-link">Style 1</a></li>
+                <li class="nav-item"><a href="portfolio-details-2.html" class="nav-link">Style 2</a></li>
+                <li class="nav-item"><a href="portfolio-details-3.html" class="nav-link">Style 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="service-1.html" class="nav-link">Service 1</a></li>
+            <li class="nav-item"><a href="service-2.html" class="nav-link">Service 2</a></li>
+            <li class="nav-item"><a href="service-3.html" class="nav-link">Service 3</a></li>
+            <li class="nav-item"><a href="process.html" class="nav-link">Our process</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Career
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="job-listing.html" class="nav-link">Job listing</a></li>
+            <li class="nav-item"><a href="job-details.html" class="nav-link">Job detail</a></li>
+            <li class="nav-item"><a href="job-apply.html" class="nav-link">Apply to job</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Shop
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="shop-grid.html" class="nav-link">Shop Grid</a></li>
+            <li class="nav-item"><a href="shop-list.html" class="nav-link">Shop list</a></li>
+            <li class="nav-item"><a href="product-details-1.html" class="nav-link">Product detail</a></li>
+            <li class="nav-item"><a href="shoping-cart.html" class="nav-link">Shopping cart</a></li>
+            <li class="nav-item"><a href="checkout.html" class="nav-link">Checkout</a></li>
+            <li class="nav-item"><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pages
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="price.html" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+            <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li class="nav-item"><a href="sign-up-1.html" class="nav-link">Sign Up 1</a></li>
+            <li class="nav-item"><a href="sign-up-2.html" class="nav-link">Sign Up 2</a></li>
+            <li class="nav-item"><a href="login.html" class="nav-link">login 1</a></li>
+            <li class="nav-item"><a href="sign1.html" class="nav-link">login 2</a></li>
+            <li class="nav-item"><a href="contact-1.html" class="nav-link">Contact 1</a></li>
+            <li class="nav-item"><a href="contact-2.html" class="nav-link">Contact 2</a></li>
+            <li class="nav-item"><a href="404.html" class="nav-link">404</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Blog
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
+            <li class="nav-item"><a href="blog-list.html" class="nav-link">Blog list</a></li>
+            <li class="nav-item"><a href="blog-masonry.html" class="nav-link">Blog Masonry</a></li>
+            <li class="nav-item"><a href="blog-masonry-sidebar.html" class="nav-link">Blog Masonry Sidebar</a></li>
+            <li class="nav-item"><a href="blog-single.html" class="nav-link">Blog Single</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown submenu">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Headers
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a href="header-dark.html" class="nav-link">Header Dark</a></li>
+            <li class="nav-item"><a href="header-style2.html" class="nav-link">Header Style 2</a></li>
+            <li class="nav-item"><a href="header-style3.html" class="nav-link">Header Style 3</a></li>
+            <li class="nav-item"><a href="header-style4.html" class="nav-link">Header Style 4</a></li>
+            <li class="nav-item"><a href="header-style5.html" class="nav-link">Header Style 5</a></li>
+            <li class="nav-item"><a href="header-style6.html" class="nav-link">Header Style 6</a></li>
+            <li class="nav-item"><a href="header-style7.html" class="nav-link">Header Style 7</a></li>
+            <li class="nav-item"><a href="header-style8.html" class="nav-link">Header Style 8</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <%= link_to "Sing Up", new_user_session_path, class: "btn_get btn_hover saas_btn hidden-sm hidden-xs" %>
+
+  </div>
+</nav>
+</header>
+
+<section class="saas_banner_area_two">
+  <div class="section_intro">
+    <div class="section_container">
+      <div class="intro">
+        <div class=" intro_content">
+          <h1 class="f_700 f_size_50 w_color f_p">Your valuable Helping hand</h1>
+          <p class="w_color f_size_18">Why I say old chap that is, spiffing jolly good a load of old tosh spend a penny tosser arse over tit, excuse my french owt to do with me up.!</p>
+          <form class="mailchimp" method="post">
+            <div class="input-group subcribes">
+              <input type="text" name="EMAIL" class="form-control memail" placeholder="saasland@gmail.com">
+              <button class="btn btn_submit f_size_15 f_500" type="submit">Get Started</button>
+            </div>
+            <p class="mchimp-errmessage" style="display: none;"></p>
+            <p class="mchimp-sucmessage" style="display: none;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="shap_img" src="pages/shape.png" alt="">
+  <div class="animation_img wow fadeInUp" data-wow-delay="0.3s">
+    
+  <img src="http://droitthemes.com/html/saasland/img/home-10/dashboard_img.png" alt="">
+
+  </div>
+</section>
+
+<section class="saas_features_area_two">
+  <div class="container">
+    <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+      <h2 class="f_p f_size_30 l_height50 f_600 t_color">Awesome Features</h2>
+      <p class="f_300 f_size_16">When you buy a dedicated server, you get a machine with resources<br> solely allocated to your business.</p>
+    </div>
+    <div class="row mb_30">
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.3s">
+          <img src="pages/icon1.png" alt="">
+          <h4 class="f_size_20 f_p t_color f_500">Awesome design</h4>
+          <p class="f_300 f_size_15 mb-0">Tosser blag bubble and squeak up the duff A bit of how's your father blatant morish char cuppa.!</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.5s">
+          <img src="pages/icon2.png" alt="">
+          <h4 class="f_size_20 f_p t_color f_500">Easy Customize</h4>
+          <p class="f_300 f_size_15 mb-0">Tosser blag bubble and squeak up the duff A bit of how's your father blatant morish char cuppa.!</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.7s">
+          <img src="pages/icon3.png" alt="">
+          <h4 class="f_size_20 f_p t_color f_500">Extreme Security</h4>
+          <p class="f_300 f_size_15 mb-0">Tosser blag bubble and squeak up the duff A bit of how's your father blatant morish char cuppa.!</p>
+        </div>
+      </div>
+    </div>
+    <div class="hr mt_100 mb-0"></div>
+  </div>
+</section>
+
+<section class="saas_service_area sec_pad">
+  <div class="container">
+    <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
+      <h2 class="f_p f_size_30 l_height50 f_600 t_color">Whom RedSwitches is for?</h2>
+      <p class="f_300 f_size_16">Well at public school cheeky bugger grub burke codswallop smashing only a quid<br> pardon you lavatory chip shop, geeza loo horse play.</p>
+    </div>
+    <div class="row saas_service_item">
+      <div class="col-lg-6">
+        <div class="saas_service_img wow fadeInLeft" data-wow-delay="0.5s">
+          <img src="http://droitthemes.com/html/saasland/img/home-10/service_one.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="saas_service_content pr_100 wow fadeInRight" data-wow-delay="0.7s">
+          <div class="icon icon_one"><i class="ti-control-shuffle"></i></div>
+          <h4 class="f_500 f_p t_color">For Developers</h4>
+          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
+          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="row flex-row-reverse saas_service_item">
+      <div class="col-lg-6">
+        <div class="saas_service_img wow fadeInRight" data-wow-delay="0.4s">
+          <img src="http://droitthemes.com/html/saasland/img/home-10/Design.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="saas_service_content pl_100 wow fadeInLeft" data-wow-delay="0.6s">
+          <div class="icon icon_two"><i class="ti-split-v-alt"></i></div>
+          <h4 class="f_500 f_p t_color">For Startup</h4>
+          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
+          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="row saas_service_item">
+      <div class="col-lg-6">
+        <div class="saas_service_img wow fadeInLeft" data-wow-delay="0.4s">
+          <img src="http://droitthemes.com/html/saasland/img/home-10/enterprice.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="saas_service_content pr_100 wow fadeInRight" data-wow-delay="0.6s">
+          <div class="icon icon_three"><i class="ti-bar-chart-alt"></i></div>
+          <h4 class="f_500 f_p t_color">For Enterprines</h4>
+          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
+          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="row flex-row-reverse saas_service_item">
+      <div class="col-lg-6">
+        <div class="saas_service_img wow fadeInRight" data-wow-delay="0.4s">
+          <img src="pages/Development.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex align-items-center">
+        <div class="saas_service_content pl_100 wow fadeInLeft" data-wow-delay="0.4s">
+          <div class="icon icon_four"><i class="ti-settings"></i></div>
+          <h4 class="f_500 f_p t_color">For Bare metal Servers</h4>
+          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
+          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sass_partner_logo_area sec_pad">
+  <div class="container">
+    <div class="sec_title text-center wow fadeInUp" data-wow-delay="0.3s">
+      <h2 class="f_p f_size_30 l_height50 f_600 t_color">We Offer Around 100 Applications</h2>
+      <p class="f_300 f_size_16">Well at public school cheeky bugger grub burke codswallop smashing only a quid<br> pardon you lavatory chip shop, geeza loo horse play.</p>
+    </div>
+    <div class="partner_logo_area_four">
+      <div class="row partner_info">
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_01.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_02.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_03.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_04.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_05.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_03.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_04.png" alt=""></a>
+        </div>
+        <div class="logo_item">
+          <a href="#"><img src="pages/logo_05.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="saas_subscribe_area">
+  <div class="container">
+    <div class="row saas_action_content wow fadeInUp" data-wow-delay="0.2s">
+      <div class="col-lg-8">
+        <h4 class="f_p f_size_30 l_height50 f_400 t_color mb-0">Ready to get Started?</h4>
+      </div>
+      <div class="col-lg-4 d-flex justify-content-end">
+        <a href="#" class="gr_btn"><span class="text">Creater an Account</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer_area footer_dark_one footer_dark_ten pt_120">
+  <div class="footer_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget dark_widget company_widget wow fadeInUp" data-wow-delay="0.2s">
+            <a href="index.html" class="f-logo"><img src="pages/logo3.png" srcset="pages/logo-3-2x.png 2x" alt="logo"></a>
+            <div class="widget-wrap">
+              <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Email:</span> <a href="mailto:saasland@gmail.com" class="f_300">saasland@gmail.com</a></p>
+              <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="tel:948256347968" class="f_300">+948 256 347 968</a></p>
+            </div>
+            <div class="f_social_icon_two">
+              <a href="#" class="ti-facebook"></a>
+              <a href="#" class="ti-twitter-alt"></a>
+              <a href="#" class="ti-vimeo-alt"></a>
+              <a href="#" class="ti-pinterest"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget dark_widget about-widget pl_70 wow fadeInUp" data-wow-delay="0.4s">
+            <h3 class="f-title f_600 t_color f_size_18 mb_40">About Us</h3>
+            <ul class="list-unstyled f_list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Diversity</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Wavelength</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget dark_widget about-widget pl_20 wow fadeInUp" data-wow-delay="0.6s">
+            <h3 class="f-title f_600 t_color f_size_18 mb_40">Workflow Solutions</h3>
+            <ul class="list-unstyled f_list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Diversity</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Wavelength</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="f_widget dark_widget about-widget pl_20 wow fadeInUp" data-wow-delay="0.7s">
+            <h3 class="f-title f_600 t_color f_size_18 mb_40">Team Solutions</h3>
+            <ul class="list-unstyled f_list">
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Leadership</a></li>
+              <li><a href="#">Diversity</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Wavelength</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom dark_f_bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-5 col-sm-12">
+          <p class="mb-0 f_300">Copyright © 2018 Desing by <a href="#">DroitThemes</a></p>
+        </div>
+        <div class="col-lg-6 col-md-4 col-sm-12">
+          <ul class="list-unstyled f_menu text-right">
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
