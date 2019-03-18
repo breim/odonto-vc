@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
   def current_user
     UserDecorator.decorate(super) unless super.nil?
   end
+
+  private
+
+  def after_sign_in_path_for(_resource)
+    session[:previous_url] || dashboard_calendars_path
+  end
 end
