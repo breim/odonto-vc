@@ -24,12 +24,21 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # Minify controllers
 gem 'responders'
+# Simple form
+gem 'simple_form'
 # Serializer API
 gem 'active_model_serializers'
 # Decorators
 gem 'draper'
 # Cop the code
 gem 'rubocop'
+# multi-search in database
+gem 'pg_search'
+# BRL Money
+gem 'brdinheiro'
+# Pagination
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -37,6 +46,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'jasmine-rails'
+  gem 'pry'
+  gem 'rspec-collection_matchers'
+  gem 'rspec-its'
+  gem 'rspec-mocks'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -54,4 +69,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'fakeweb'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'shoulda'
+  gem 'zonebie'
 end
