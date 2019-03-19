@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg menu_one menu_eight">
       <div class="container">
         <a class="navbar-brand sticky_logo" href="/">
-          <img src='pages/logo.png'>
-          <img src='pages/logo_2.png'>
+          <img src='/logo_white.png'>
+          <img src='/logo_black.png'>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="menu_toggle">
@@ -22,7 +22,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav menu w_menu ml-auto">
-             <li class="nav-item dropdown submenu active">
+            <li class="nav-item dropdown submenu">
+              <%= link_to 'Suporte', root_path, class: 'nav-link'  %>
+            </li>
+            <li class="nav-item dropdown submenu active">
               <%= link_to 'Entrar', new_user_session_path, class: 'nav-link'  %>
             </li>
           </ul>
@@ -94,6 +97,37 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="saas_features_area_two">
+  <div class="container">
+    <div class="row mb_30">
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.3s">
+          <!--- img from https://www.flaticon.com/free-icon/profits_584038 !-->
+          <img src="pages/friendship.png" alt="" width="84">
+          <h4 class="f_size_20 f_p t_color f_500">Tudo sobre seu paciente</h4>
+          <p class="f_300 f_size_15 mb-0">Armazenamos todas as informações de seus pacientes desde tratamentos, imagens, orçamentos até receituários e atestados em um só lugar.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.5s">
+          <!--- img from https://www.flaticon.com/free-icon/calendar_1142731#term=calendar&page=1&position=24 !-->
+          <img src="pages/brackets.png" alt="" width="84">
+          <h4 class="f_size_20 f_p t_color f_500">Odontograma</h4>
+          <p class="f_300 f_size_15 mb-0">Visualização gráfica da arcada e procedimentos de cada plano de tratamento. Com orgaçamento integrado.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="saas_features_item text-center wow fadeInUp" data-wow-delay="0.7s">
+          <!--- img from https://www.flaticon.com/free-icon/piggy-bank_584052 !-->
+          <img src="pages/paper-plane.png" alt="" width="84">
+          <h4 class="f_size_20 f_p t_color f_500">Controle de retornos</h4>
+          <p class="f_300 f_size_15 mb-0">Já parou para imaginar quantos clientes você já perdeu por não se lembrar de marcar um retorno? Então não se preocupe mais, possuímos um ambiente específico que irá te ajudar!</p>
+        </div>
+      </div>
+    </div>
     <div class="hr mt_100 mb-0"></div>
   </div>
 </section>
@@ -101,77 +135,37 @@
 <section class="saas_service_area sec_pad">
   <div class="container">
     <div class="sec_title text-center mb_70 wow fadeInUp" data-wow-delay="0.3s">
-      <h2 class="f_p f_size_30 l_height50 f_600 t_color">Whom RedSwitches is for?</h2>
-      <p class="f_300 f_size_16">Well at public school cheeky bugger grub burke codswallop smashing only a quid<br> pardon you lavatory chip shop, geeza loo horse play.</p>
+      <h2 class="f_p f_size_30 l_height50 f_600 t_color">Mais de <span class="count">200</span> mil mensagens enviadas para pacientes.</h2>
+      <p class="f_300 f_size_16">O atendimento é só o início. Faça seu consultório trabalhar para você. <br/>Automatize a comunicação com seus pacientes.</p>
     </div>
-    <div class="row saas_service_item">
+    <!--
+    <div class="row saas_service_item"> !-->
+    <div class="row feature_info saas_service_item">
       <div class="col-lg-6">
-        <div class="saas_service_img wow fadeInLeft" data-wow-delay="0.5s">
-          <img src="http://droitthemes.com/html/saasland/img/home-10/service_one.png" alt="">
+        <div class="feature_img f_img_one">
+          <img class="leaf one wow fadeIn feature_img" data-wow-delay="0.3s" src="http://droitthemes.com/html/saasland/img/home2/featureimg1.png" alt="" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+          <img class="wow fadeInRight feature_img" data-wow-delay="0.1s" style="max-width: 520px;" src="http://droitthemes.com/html/saasland/img/home2/featureimg1-1.png" alt="" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+          <img class="leaf three wow fadeInLeft" data-wow-delay="0.7s" src="http://droitthemes.com/html/saasland/img/home2/featureimg1-2.png" alt="" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
         </div>
       </div>
       <div class="col-lg-6 d-flex align-items-center">
         <div class="saas_service_content pr_100 wow fadeInRight" data-wow-delay="0.7s">
-          <div class="icon icon_one"><i class="ti-control-shuffle"></i></div>
-          <h4 class="f_500 f_p t_color">For Developers</h4>
+          <div class="icon icon_four"><i class="ti-comments"></i></div>
+          <h4 class="f_500 f_p t_color">Mais de 80.000 mil mensagens enviadas para pacientes.</h4>
           <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
-          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
+          <div class="menu_eight">
+          <a class="btn_get btn_hover saas_btn hidden-sm hidden-xs" style="border-color: #23b1fe;" href="/users/sign_up">Criar uma conta</a>
+        </div>
         </div>
       </div>
     </div>
-    <div class="row flex-row-reverse saas_service_item">
-      <div class="col-lg-6">
-        <div class="saas_service_img wow fadeInRight" data-wow-delay="0.4s">
-          <img src="http://droitthemes.com/html/saasland/img/home-10/Design.png" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 d-flex align-items-center">
-        <div class="saas_service_content pl_100 wow fadeInLeft" data-wow-delay="0.6s">
-          <div class="icon icon_two"><i class="ti-split-v-alt"></i></div>
-          <h4 class="f_500 f_p t_color">For Startup</h4>
-          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
-          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="row saas_service_item">
-      <div class="col-lg-6">
-        <div class="saas_service_img wow fadeInLeft" data-wow-delay="0.4s">
-          <img src="http://droitthemes.com/html/saasland/img/home-10/enterprice.png" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 d-flex align-items-center">
-        <div class="saas_service_content pr_100 wow fadeInRight" data-wow-delay="0.6s">
-          <div class="icon icon_three"><i class="ti-bar-chart-alt"></i></div>
-          <h4 class="f_500 f_p t_color">For Enterprines</h4>
-          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
-          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="row flex-row-reverse saas_service_item">
-      <div class="col-lg-6">
-        <div class="saas_service_img wow fadeInRight" data-wow-delay="0.4s">
-          <img src="pages/Development.png" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 d-flex align-items-center">
-        <div class="saas_service_content pl_100 wow fadeInLeft" data-wow-delay="0.4s">
-          <div class="icon icon_four"><i class="ti-settings"></i></div>
-          <h4 class="f_500 f_p t_color">For Bare metal Servers</h4>
-          <p class="f_p f_300">Harry don't get shirty with me loo hanky panky in my flat bog jolly good blag bamboozled the BBC well fantastic, excuse my French crikey geeza spiffing lost the plot codswallop brilliant blower pardon.!</p>
-          <a href="#" class="gr_btn"><span class="text">Learn More</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="sass_partner_logo_area sec_pad">
   <div class="container">
     <div class="sec_title text-center wow fadeInUp" data-wow-delay="0.3s">
-      <h2 class="f_p f_size_30 l_height50 f_600 t_color">We Offer Around 100 Applications</h2>
-      <p class="f_300 f_size_16">Well at public school cheeky bugger grub burke codswallop smashing only a quid<br> pardon you lavatory chip shop, geeza loo horse play.</p>
+      <h2 class="f_p f_size_30 l_height50 f_600 t_color">Quem confia na gente</h2>
+      <p class="f_300 f_size_16">Milhares de dentistas têm confiança no Odonto.vc. Leia histórias deles.</p>
     </div>
     <div class="partner_logo_area_four">
       <div class="row partner_info">
@@ -280,12 +274,12 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-5 col-sm-12">
-          <p class="mb-0 f_300">Copyright © 2018 Desing by <a href="#">DroitThemes</a></p>
+          <p class="mb-0 f_300">© Odonto.vc</p>
         </div>
         <div class="col-lg-6 col-md-4 col-sm-12">
           <ul class="list-unstyled f_menu text-right">
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="/policy">Política de Privacidade</a></li>
           </ul>
         </div>
       </div>

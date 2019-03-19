@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   root 'pages#index'
+  get  '/policy', to: 'pages#policy'
+
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
 
 

@@ -7103,9 +7103,9 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 /*====================================================*/
 /*================= Start breadcrumb_area css =================*/
 .breadcrumb_area {
-  background-image: -moz-linear-gradient(180deg, #5e2ced 0%, #a485fd 100%);
-  background-image: -webkit-linear-gradient(180deg, #5e2ced 0%, #a485fd 100%);
-  background-image: -ms-linear-gradient(180deg, #5e2ced 0%, #a485fd 100%);
+  background-image: -moz-linear-gradient(180deg, #237efd 0%, #24b0fe 100%);
+  background-image: -webkit-linear-gradient(180deg, #237efd 0%, #24b0fe 100%);
+  background-image: -ms-linear-gradient(180deg, #237efd 0%, #24b0fe 100%);
   position: relative;
   z-index: 1;
   padding: 235px 0px 125px;
@@ -7426,6 +7426,14 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   width: 735px;
 }
 
+.feature_info .feature_img.f_img_one .three {
+    bottom: 60px;
+    left: 80px;
+}
+.case_study_item img, .feature_info .feature_img img, .p_feature_item img {
+    max-width: 100%;
+}
+
 .software_promo_area .round_shape .r_shape.r_shape_three {
   height: 550px;
   width: 550px;
@@ -7620,23 +7628,28 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   max-width: 100%;
 }
 
-.feature_info .feature_img.f_img_one {
-  margin-left: -50px;
-}
 
 .feature_info .feature_img.f_img_one .one {
   bottom: 10px;
-  left: 50px;
 }
 
 .feature_info .feature_img.f_img_one .three {
   bottom: 60px;
-  left: 50px;
 }
 
 .feature_info .feature_img.f_img_two .one {
   right: 120px;
   bottom: 10px;
+}
+
+.feature_info .feature_img.f_img_one .three {
+    bottom: 60px;
+}
+.case_study_item img, .feature_info .feature_img img, .p_feature_item img {
+    max-width: 100%;
+}
+.leaf {
+    position: absolute;
 }
 
 .feature_info .feature_img.f_img_two .three {
@@ -11595,15 +11608,23 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   margin-bottom: 27px;
 }
 
+.feature_info .feature_img.f_img_one .one {
+    bottom: 10px;
+}
+
+.case_study_item img, .feature_info .feature_img img, .p_feature_item img {
+    max-width: 100%;
+}
+
+.case_study_item img, .feature_info .feature_img img, .p_feature_item img {
+    max-width: 100%;
+}
+
 .job_deatails_content ul li i {
   position: absolute;
   left: 0;
   top: 5px;
   color: #5f2eed;
-}
-
-.job_deatails_content:nth-child(4) {
-  border-bottom: 1px solid #eeebf6;
 }
 
 .job_info {
@@ -14532,7 +14553,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_top {
-  border-bottom: 1px solid #e0e3ef;
+  border-bottom: 1px solid #fff;
   padding: 115px 0px 100px;
 }
 
@@ -14568,7 +14589,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .f_widget.about-widget .f_list li a {
-  font: 300 16px/20px "Poppins", sans-serif;
+  font: 400 16px/20px "Poppins", sans-serif;
   color: #677294;
   position: relative;
   -webkit-transition: color 0.2s linear;
@@ -14696,13 +14717,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_bottom .f_menu li + li:before {
-  content: "";
-  width: 1px;
-  height: 12px;
-  background: #b1b7ca;
-  display: inline-block;
-  margin-right: 18px;
-  vertical-align: middle;
 }
 
 .footer_bottom a:hover {
@@ -15051,15 +15065,15 @@ input[type=number]::-webkit-inner-spin-button {
 
 /*============== footer_dark_one css =============*/
 .footer_dark_one {
-  background: #15133a;
+  background: #24b0fe;
 }
 
 .footer_dark_one .footer_top {
-  border-color: #1f1d48;
+  border-color: #fff;
 }
 
 .footer_dark_one .f_widget.about-widget .f_list li a, .footer_dark_one .f_widget .widget-wrap p a, .footer_dark_one .f_social_icon_two a {
-  color: #9ca5c1;
+  color: #fff;
 }
 
 .dark_f_bottom a {
@@ -15073,7 +15087,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .dark_f_bottom p {
-  color: #9ca5c1;
+  color: #fff;
 }
 
 .dark_f_bottom p a {
@@ -15081,11 +15095,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .dark_f_bottom .f_menu li a {
-  color: #9ca5c1;
+  color: #fff;
 }
 
 .dark_f_bottom .f_menu li a:hover {
-  color: #4069eb;
+  color: #fff;
 }
 
 .dark_f_bottom .f_menu li + li:before {
@@ -15169,11 +15183,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_dark_two .dark_f_bottom p a {
-  color: #6754e2;
+  color: #fff;
 }
 
 .footer_dark_two .dark_f_bottom .f_menu li a:hover {
-  color: #6754e2;
+  color: #fff;
 }
 
 .footer_dark_three {
@@ -15228,7 +15242,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_dark_three .dark_f_bottom .f_menu li a:hover {
-  color: #5e2ced;
+  color: #fff;
 }
 
 .footer_dark_four {
@@ -15291,11 +15305,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_nine_top .f_widget.about-widget .f_list li a:before {
-  background: #0479f7;
+  background: #fff;
 }
 
 .footer_nine_top .f_widget.about-widget .f_list li a:hover {
-  color: #0479f7;
+  color: #fff;
 }
 
 .footer_nine_top .company_widget .f_social_icon_two a:first-child {
@@ -15421,11 +15435,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .footer_dark_ten .f_widget.about-widget .f_list li a:hover {
-  color: #23b1fe;
+  color: #fff;
 }
 
 .footer_dark_ten .dark_f_bottom .f_menu li a:hover, .footer_dark_ten .dark_f_bottom a {
-  color: #23b1fe;
+  color: #fff;
 }
 
 /*====================================================*/

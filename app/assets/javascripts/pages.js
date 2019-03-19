@@ -923,6 +923,15 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
 })(jQuery)
 
-
-
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 100000,
+        easing: 'linear',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
 
