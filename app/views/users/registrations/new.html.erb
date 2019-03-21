@@ -1,29 +1,76 @@
-<h2>Sign up</h2>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=290345954980475&autoLogAppEvents=1"></script>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="container">asd
+  <div class="row devise-panel">
+    <div class="col-lg-6 offset-lg-3">
+      <img src="/logo_black.png" />
+      <div class="card" style="">
+        <div class="card-body">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <h2 class='mb-4'>Cadastre-se</h2>
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <div class='facebookLogin'>
+                <%= link_to "Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'fb-login-button btn-block', data: { size: 'large', width: '100%', 'button-type': 'continue_with', 'auto-logout-link': 'false', 'use-continue-as': 'true' } %><br />
+              </div>
+            <% end %>
+          <% end %>
+
+          <p class="divisor is-3">
+            <span>ou preencha o formulário abaixo</span>
+          </p>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <%= f.label :first_name, 'Nome' %>
+                <%= f.text_field :first_name, class: 'form-control', autofocus: true %>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <%= f.label :last_name, 'Sobrenome' %>
+                <%= f.text_field :last_name, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autocomplete: "email", class: 'form-control', required: true %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', required: true %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Criar uma conta", class: 'btn btn-primary btn-block' %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <%= render "users/shared/links" %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+<script type="text/javascript">
+$( document ).ready(function() {
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  $( ".facebookLogin" ).on( "click", function() {
+    console.log('test');
+    window.location='/users/auth/facebook';
+  });
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+})
+</script>

@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   before_create :build_token
 
+  validates :first_name, :last_name, presence: true
+
   def build_token
     self.token = SecureRandom.hex(6)
   end

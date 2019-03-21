@@ -1,0 +1,29 @@
+.facebookLogin{
+  position: relative;
+  min-height: 100%;
+  max-width: 360px;
+  margin: auto;
+}
+
+.divisor.is-3 {
+  margin: 2rem 0;
+}
+
+.divisor {
+  text-align: center;
+  background-image: -webkit-linear-gradient(top,transparent 10px,#e3e3e3 0,#e3e3e3 12px,transparent 0);
+  background-image: -o-linear-gradient(top,transparent 10px,#e3e3e3 10px,#e3e3e3 12px,transparent 12px);
+  background-image: linear-gradient(180deg,transparent 10px,#e3e3e3 0,#e3e3e3 12px,transparent 0);
+  margin: 0;
+}
+
+.divisor>span {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 10px;
+  text-transform: none;
+}
+
+.field_with_errors{
+  color: red;
+}

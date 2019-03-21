@@ -1,21 +1,25 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=290345954980475&autoLogAppEvents=1"></script>
+
 <div class="container">
   <div class="row devise-panel">
     <div class="col-lg-6 offset-lg-3">
       <img src="/logo_black.png" />
       <div class="card" style="">
         <div class="card-body">
-          <h2>Log in</h2>
+          <h2>Entrar</h2>
+
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
           <%= render 'shared/flash_messages' %>
-          
+
           <div class="form-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
           </div>
 
           <div class="form-group">
-            <%= f.label :password %><br />
+            <%= f.label :password, 'Senha' %><br />
             <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
           </div>
 
@@ -26,14 +30,26 @@
           </div>
           <% end -%>
 
-          <div class="actions">
-            <%= f.submit "Log in", class: "btn btn-primary" %>
+          <div class="actions form-group">
+            <%= f.submit "Entrar", class: "btn btn-primary btn-block" %>
           </div>
           <% end %>
 
+          <p class="divisor is-3">
+            <span>ou</span>
+          </p>
+
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <div class='facebookLogin'>
+                <%= link_to "Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'fb-login-button btn-block', data: { size: 'large', width: '100%', 'button-type': 'login_with', 'auto-logout-link': 'false', 'use-continue-as': 'true' } %><br />
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <%= render "users/shared/links" %>
     </div>
   </div>
 </div>
+

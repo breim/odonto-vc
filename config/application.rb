@@ -16,8 +16,15 @@ module Dentist
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    # Set lang
+    # Brazilian datetime and lang
+    config.time_zone = 'Brasilia'
+    config.active_record.default_timezone = :local
     config.i18n.default_locale = :'pt-BR'
+
+    # Field with errors at validation
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+        "<div class=\"field_with_errors control-group error\">#{html_tag}</div>".html_safe
+    }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
