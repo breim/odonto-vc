@@ -42,7 +42,7 @@
           <%- if devise_mapping.omniauthable? %>
             <%- resource_class.omniauth_providers.each do |provider| %>
               <div class='facebookLogin'>
-                <%= link_to "Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'fb-login-button btn-block', data: { size: 'large', width: '100%', 'button-type': 'login_with', 'auto-logout-link': 'false', 'use-continue-as': 'true' } %><br />
+                <%= link_to "Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'fb-login-button btn-block', data: { size: 'large', width: '100%', 'button-type': 'continue_with', 'auto-logout-link': 'false', 'use-continue-as': 'true' }, onlogin: "redirectFacebookButton" %><br />
               </div>
             <% end %>
           <% end %>
