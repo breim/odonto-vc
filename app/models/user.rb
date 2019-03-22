@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   before_create :build_token
 
-  validates :first_name, :last_name, presence: true
+  validates :name, presence: true
 
   def build_token
     self.token = SecureRandom.hex(6)
@@ -16,10 +16,9 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(provider: auth['provider'], uid: auth['uid']).first_or_create do |user|
-      user.email = auth['info']['email']
       user.name = auth['info']['name']
+      user.email = auth['info']['email']
       user.password = Devise.friendly_token[0, 20]
-      # user.image = auth.info.image
     end
   end
 end
