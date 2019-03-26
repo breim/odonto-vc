@@ -22,8 +22,8 @@ module Dentist
     config.i18n.default_locale = :'pt-BR'
 
     # Field with errors at validation
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
-        "<div class=\"field_with_errors control-group error\">#{html_tag}</div>".html_safe
+    config.action_view.field_error_proc = proc { |html_tag, _instance|
+      "<div class=\"field_with_errors control-group error\">#{html_tag}</div>".html_safe
     }
 
     # Settings in config/environments/* take precedence over those specified here.

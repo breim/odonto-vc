@@ -6,14 +6,12 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
 
-
   get '/dashboard', to: 'dashboard/calendars#index'
   namespace :dashboard do
     resources :calendars, path: 'agenda', only: %i[index] do
       # get 'search', on: :collection
     end
   end
-
 
   namespace :api, path: 'api/v1', constraints: { format: 'json' } do
     resources :users, only: :create
