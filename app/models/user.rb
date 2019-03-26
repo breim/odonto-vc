@@ -11,10 +11,10 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   include PgSearch
-  pg_search_scope :search, against: %i[name celphone email cpf],
-                           using: {
-                             tsearch: { prefix: true }
-                           }
+  pg_search_scope :search, against: %i[name celphone cpf],
+                                    using: {
+                                      tsearch: { prefix: true }
+                                    }
 
   def build_token
     self.token = SecureRandom.hex(6)
