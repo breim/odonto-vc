@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :calendars, path: 'agenda', only: %i[index] do
       # get 'search', on: :collection
     end
+    resources :customers, path: 'pacientes'
   end
 
   namespace :api, path: 'api/v1', constraints: { format: 'json' } do
