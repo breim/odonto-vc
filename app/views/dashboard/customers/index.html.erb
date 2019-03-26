@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-lg-8 col-md-8 col-sm-8">
+    <h3>Pacientes</h3>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4">
+    <%= link_to "<i class='fa fa-plus-circle' aria-hidden='true'></i> Novo paciente".html_safe, new_dashboard_customer_path, class: 'btn btn-rounded waves-effect waves-light btn-outline-primary float-right' %>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <%# unless @campaign.coupons.empty? %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Cód.</th>
+              <th>Nome</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%# @coupons.each do |coupon| %>
+            <tr>
+              <td><%# coupon.id %></td>
+              <td><%# coupon.code %></td>
+              <td><%# badge_status(coupon.used) %></td>
+            </tr>
+            <%# end %>
+          </tbody>
+        </table>
+        <%# else %>
+        <h5>Você não tem pacientes :/</h5>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# render 'shared/paginate', collection: @coupons %>

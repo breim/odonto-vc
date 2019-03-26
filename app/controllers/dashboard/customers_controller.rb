@@ -9,7 +9,7 @@ module Dashboard
     def index
       params[:page] = 1 unless params[:page].present?
       @customers = if params[:search].present?
-                     Customer.joins(:user).where(user_id: current_user.id, deleted: false).search_customer(params[:search])
+                     Customer.joins(:user).where(user_id: current_user.id, deleted: false).search(params[:search])
                              .order('created_at desc').offset((params[:page].to_i - 1) * 15).limit(15)
                    else
                      Customer.joins(:user).where(user_id: current_user.id, deleted: false)
@@ -28,7 +28,7 @@ module Dashboard
     end
 
     def edit
-      #@odontograms = Odontogram.where(customer_id: @customer.id, user_id: current_user.id, disabled: false).order('created_at desc')
+      # @odontograms = Odontogram.where(customer_id: @customer.id, user_id: current_user.id, disabled: false).order('created_at desc')
       respond_with(@customer)
     end
 
