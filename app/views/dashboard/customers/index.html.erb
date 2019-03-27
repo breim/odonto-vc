@@ -11,7 +11,7 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <%= unless @customers.coupons.empty? %>
+        <% unless @customers.empty? %>
         <table class="table">
           <thead>
             <tr>
@@ -25,9 +25,9 @@
           <tbody>
             <% @customers.each do |customer| %>
             <tr>
-              <td><%# customer.id %></td>
-              <td><%# customer.code %></td>
-              <td><%# customer.name %></td>
+              <td><%= customer.id %></td>
+              <td><%= customer.code %></td>
+              <td><%= customer.name %></td>
               <td><%= customer.age %></td>
               <td><%= customer.celphone %></td>
             </tr>

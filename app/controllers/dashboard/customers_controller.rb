@@ -10,10 +10,10 @@ module Dashboard
       params[:page] = 1 unless params[:page].present?
       @customers = if params[:search].present?
                      Customer.joins(:user).where(user_id: current_user.id, deleted: false).search(params[:search])
-                             .order('created_at desc').offset((params[:page].to_i - 1) * 15).limit(15)
+                             .order('created_at desc').offset((params[:page].to_i - 1) * 15).limit(15).decorate
                    else
                      Customer.joins(:user).where(user_id: current_user.id, deleted: false)
-                             .order('created_at desc').offset((params[:page].to_i - 1) * 30).limit(30)
+                             .order('created_at desc').offset((params[:page].to_i - 1) * 30).limit(30).decorate
                    end
       respond_with(@customers, location: dashboard_customers_path)
     end
