@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search, against: %i[name celphone cpf],
-                                    using: {
-                                      tsearch: { prefix: true }
-                                    }
+                           using: {
+                             tsearch: { prefix: true }
+                           }
 end
