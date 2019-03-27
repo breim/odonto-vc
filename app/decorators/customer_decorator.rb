@@ -1,4 +1,4 @@
-class CustomerDecorator < Draper::Decorator
+class CustomerDecorator < ApplicationDecorator
   delegate_all
 
   def age

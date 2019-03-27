@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserDecorator < Draper::Decorator
+class UserDecorator < ApplicationDecorator
   delegate_all
 
   def facebook_image
