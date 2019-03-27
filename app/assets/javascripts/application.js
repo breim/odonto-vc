@@ -1,6 +1,7 @@
 //= require jquery
 //= require rails-ujs
 //= require users
+//= require masker
 
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/popper.min

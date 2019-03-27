@@ -197,9 +197,9 @@
         
         <hr>
         <div class="modal-footer modal-footer-customers">
-          <%= link_to 'Deletar cliente', dashboard_customer_path(@customer.id), class: 'btn btn-outline-danger mr-auto', remote: true, method: :delete, data: { confirm: "Você realmente quer deletar o cliente?" } if action_name == 'edit' %>
+          <%= link_to 'Deletar o Paciente', dashboard_customer_path(@customer.id), class: 'btn btn-outline-danger mr-auto', remote: true, method: :delete, data: { confirm: "Você realmente quer deletar o paciente ?" } if action_name == 'edit' %>
           <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
-          <%= f.submit class: 'btn btn-submit float-right' %>
+          <%= f.submit class: 'btn btn-outline-primary float-right' %>
         </div>
         <% end %>
       </div>
@@ -207,3 +207,4 @@
   </div>
 </div>
 
+<%= javascript_include_tag 'customers/form' %>

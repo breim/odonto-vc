@@ -9,6 +9,7 @@ pt-BR:
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models:
       user: Usuário
+      customer: Paciente
     attributes:
       user:
         first_name: "Nome"

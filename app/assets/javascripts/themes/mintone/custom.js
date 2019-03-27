@@ -81,7 +81,7 @@ $(function() {
         $('[data-toggle="popover"]').popover()
     })
     $(function() {
-        $('#sidebarnav').AdminMenu()
+       // $('#sidebarnav').AdminMenu()
     });
     $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
     $("body").trigger("resize");
