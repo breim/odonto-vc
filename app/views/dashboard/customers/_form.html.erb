@@ -1,0 +1,209 @@
+
+<div class="modal fade bd-example-modal-lg" id="customersRegistration" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Paciente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for([:dashboard, @customer], remote: true, authenticity_token: true) do |f| %>
+        <ul class="nav nav-tabs" id="customersTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#geral" role="tab" aria-controls="home" aria-selected="true">Geral</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#address" role="tab" aria-controls="address" aria-selected="false">Endereço</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#odontogram" role="tab" aria-controls="odontogram" aria-selected="false">Odontograma</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#historic" role="tab" aria-controls="historic" aria-selected="false">Histórico</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#annotation" role="tab" aria-controls="annotation" aria-selected="false">Anotações</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <!-- Geral -->
+          <div class="tab-pane fade show active" id="geral" role="tabpanel">
+
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group required">
+                      <%= f.label :name, "Nome completo" %>
+                      <%= f.text_field :name, required: true, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <%= f.label :code, "Código do paciente" %>
+                      <%= f.text_field :code, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <%= f.label :cpf, "CPF" %>
+                      <%= f.text_field :cpf, class: 'form-control', onblur: "cpfVal(this.value)" %>
+                      <div id="cpfValidate"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <%= f.label :code, "Nascimento" %>
+                      <div class="form-inline">
+                        <%= f.date_select :birthday, { order: [:day, :month, :year], prompt: { day: 'Dia', month: 'Mês', year: 'Ano' }, start_year: Date.today.year, end_year: Date.today.year - 100}, class: 'form-control' %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <%= f.label :gender, "Sexo" %>
+                      <%= f.select(:gender, [['Masculino', 'H'], ['Femino', 'M']], {}, { class: 'form-control' }) %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <%= f.label :celphone, "Celular" %>
+                      <%= f.text_field :celphone, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <%= f.label :phone, "Telefone" %>
+                      <%= f.text_field :phone, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-3">
+                <div id="photo">
+                  <div class="form-customer-img">
+                    <%# image_tag(@customer.image_path(:medium), id: 'cust_img') %>
+                  </div>
+                  <div id="my_camera"></div>
+                  <div class="form-group">
+                    <button type=button onClick="new_photo()" class="btn btn-outline-primary btn-xs">Foto da WebCam</button>
+                    <button type=button onClick="take_snapshot()" id="take_photo" class="btn btn-success btn-xs">Bater foto</button>
+                  </div>
+                  <div class="form-group">
+                    <%# f.file_field :image %>
+                    <%# f.hidden_field :image_base64 %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- address -->
+          <div class="tab-pane fade" id="address" role="tabpanel">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :zipcode, "CEP" %>
+                  <%= f.text_field :zipcode, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :address, "Endereço" %>
+                  <%= f.text_field :address, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :number, "Número" %>
+                  <%= f.text_field :number, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :complement, "Complemento" %>
+                  <%= f.text_field :complement, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :distric, "Bairro" %>
+                  <%= f.text_field :distric, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :city, "Cidade" %>
+                  <%= f.text_field :city, class: 'form-control' %>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <%= f.label :state, "Estado" %>
+                  <%= f.text_field :state, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Odontograma -->
+          <div class="tab-pane fade" id="odontogram" role="tabpanel">
+            <%# render 'dashboard/odontograms/index' %>
+          </div>
+
+          <!-- Histórico -->
+          <div class="tab-pane fade" id="historic" role="tabpanel">
+            Histórico
+          </div>
+
+          <!-- Anotações -->
+          <div class="tab-pane fade" id="annotation" role="tabpanel">
+            <div class="form-group">
+              <%= f.label :annotation, "Anotações" %>
+              <%= f.text_area :annotation, rows: 7, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        
+        <hr>
+        <div class="modal-footer modal-footer-customers">
+          <%= link_to 'Deletar cliente', dashboard_customer_path(@customer.id), class: 'btn btn-outline-danger mr-auto', remote: true, method: :delete, data: { confirm: "Você realmente quer deletar o cliente?" } if action_name == 'edit' %>
+          <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
+          <%= f.submit class: 'btn btn-submit float-right' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

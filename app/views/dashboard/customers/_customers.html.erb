@@ -1,0 +1,55 @@
+<div class="row">  
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <% unless @customers.empty? %>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Contato</th>
+              <th>Cód.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customers.each do |customer| %>
+            <tr class='clickable-row list-customers' data-remote="true">
+              <td><%= customer.id %></td>
+              <td><%= customer.name %></td>
+              <td><%= customer.age %></td>
+              <td><%= customer.celphone %></td>
+              <td><%= customer.code %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <% else %>
+        <h5>Você não tem pacientes :/</h5>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/paginate', collection: @customers %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".list-customers").click(function(event) {
+      Rails.ajax({
+        type: "GET", 
+        url: '/dashboard/customers/' + $(this).find("td").first().text() + '/edit',
+        dataType: 'script',
+        // data: $(this).find("td").first().text()+ "/edit",
+        success: function(repsonse){
+          console.log('success')
+        },
+        error: function(repsonse){
+          console.log('error')
+        }
+      })
+    });
+  });
+</script>

@@ -3246,7 +3246,8 @@ tbody.collapse.show {
   text-align:center
 }
 .tab-content>.tab-pane {
-  display:none
+  display:none;
+  margin-top: 15px;
 }
 .tab-content>.active {
   display:block
@@ -4641,20 +4642,21 @@ button.close {
   opacity:.5
 }
 .modal-header {
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
-  -webkit-box-align:start;
-  -ms-flex-align:start;
-  align-items:flex-start;
-  -webkit-box-pack:justify;
-  -ms-flex-pack:justify;
-  justify-content:space-between;
-  padding:3rem 3rem 1rem 3rem;
-
-  border-top-left-radius:.3rem;
-  border-top-right-radius:.3rem
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
 }
+
 .modal-header .close {
   padding:.5rem;
   margin:-1rem -1rem -1rem auto
@@ -4668,7 +4670,8 @@ button.close {
   -webkit-box-flex:1;
   -ms-flex:1 1 auto;
   flex:1 1 auto;
-  padding:3rem
+  padding: 1rem;
+  margin-top: 10px;
 }
 .modal-footer {
   display:-webkit-box;
@@ -4680,8 +4683,7 @@ button.close {
   -webkit-box-pack:end;
   -ms-flex-pack:end;
   justify-content:flex-end;
-  padding:1.4rem;
-  border-top:1px solid #e9ecef
+  margin-top: 15px;
 }
 .modal-footer>:not(:first-child) {
   margin-left:.25rem
@@ -4710,7 +4712,7 @@ button.close {
 }
 @media (min-width:992px) {
   .modal-lg {
-    max-width:690px
+    max-width:1100px
   }
 }
 .tooltip {

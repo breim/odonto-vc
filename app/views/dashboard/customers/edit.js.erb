@@ -1,0 +1,3 @@
+$("#customersRegistration").remove();
+$("#customerForm").append("<%= escape_javascript render(partial: 'form', locals: { object: @customer }) %>");
+$("#customersRegistration").modal('toggle');

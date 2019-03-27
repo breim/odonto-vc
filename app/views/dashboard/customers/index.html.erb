@@ -2,7 +2,6 @@
   <div class="col-lg-5 col-md-3 col-sm-4">
     <h3>Pacientes</h3>
   </div>
-
   <div class="col-lg-4 col-md-6 col-sm-5">
     <%= form_tag(dashboard_customers_path, class: 'row', method: :get) do %>
     <div class="zcol-12 col-sm pr-sm-0">
@@ -15,45 +14,13 @@
     </div>
     <% end %>
   </div>
-
   <div class="col-lg-3 col-md-3 col-sm-3">
     <%= link_to "<i class='fa fa-plus-circle' aria-hidden='true'></i> Novo paciente".html_safe, new_dashboard_customer_path, class: 'btn btn-rounded waves-effect waves-light btn-outline-primary float-right' %>
   </div>
 </div>
 
-<div class="row">  
-  <div class="col-sm-12">
-    <div class="card">
-      <div class="card-body">
-        <% unless @customers.empty? %>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th>Contato</th>
-              <th>Cód.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @customers.each do |customer| %>
-            <tr>
-              <td><%= customer.id %></td>
-              <td><%= customer.name %></td>
-              <td><%= customer.age %></td>
-              <td><%= customer.celphone %></td>
-              <td><%= customer.code %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <% else %>
-        <h5>Você não tem pacientes :/</h5>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div id="customers">
+  <%= render 'customers' %>
 </div>
 
-<%= render 'shared/paginate', collection: @customers %>
+<div id="customerForm"></div>
