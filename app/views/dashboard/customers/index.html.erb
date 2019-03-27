@@ -11,29 +11,32 @@
   <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
-        <%# unless @campaign.coupons.empty? %>
+        <%= unless @customers.coupons.empty? %>
         <table class="table">
           <thead>
             <tr>
               <th>#</th>
               <th>Cód.</th>
               <th>Nome</th>
-              <th>Email</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <%# @coupons.each do |coupon| %>
+            <% @customers.each do |customer| %>
             <tr>
-              <td><%# coupon.id %></td>
-              <td><%# coupon.code %></td>
-              <td><%# badge_status(coupon.used) %></td>
+              <td><%# customer.id %></td>
+              <td><%# customer.code %></td>
+              <td><%# customer.name %></td>
+              <td><%= customer.age %></td>
+              <td><%= customer.celphone %></td>
             </tr>
-            <%# end %>
+            <% end %>
           </tbody>
         </table>
-        <%# else %>
+        <% else %>
         <h5>Você não tem pacientes :/</h5>
-        <%# end %>
+        <% end %>
       </div>
     </div>
   </div>
