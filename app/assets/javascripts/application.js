@@ -1,6 +1,8 @@
 //= require jquery
 //= require rails-ujs
-//= require users
+
+//= require dashboard/users
+
 //= require vendors/masker
 //= require vendors/sweetAlert
 
