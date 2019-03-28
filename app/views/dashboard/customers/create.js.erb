@@ -1,0 +1,13 @@
+<% if @customer.valid? %>
+  $("#customersRegistration").modal('toggle');
+  swal({
+    title: "Sucesso!",
+    text: "Operação realizada com sucesso.",
+    icon: "success",
+  })
+  .then((buttonClick) => {
+    location.reload();
+  });
+<% else %>
+  sweetAlert("Falha ao cadastrar cliente", "Verifique novamente o formulário.", "error");
+<% end %>
