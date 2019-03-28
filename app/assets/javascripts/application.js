@@ -2,6 +2,7 @@
 //= require rails-ujs
 //= require users
 //= require masker
+//= require sweetAlert
 
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/popper.min
