@@ -1,0 +1,14 @@
+<% if @customer.valid? %>
+  $("#customersRegistration").modal('toggle');
+  $('.simple_form').find("input[type=text], textarea").val("");
+  swal({
+    title: "Sucesso!",
+    text: "Operação realizada com sucesso.",
+    icon: "success",
+  })
+  .then((buttonClick) => {
+    location.reload();
+  });
+<% else %>
+  sweetAlert("Ops!", "Verifique novamente o formulário", "error");
+<% end %>
