@@ -1437,7 +1437,7 @@ a.fc-day-number{
 }
 
 .fc-right {
-  margin: 30px 10px 5px -100px;
+  margin: 30px 1px 5px -100px;
   box-decoration-break: clone;
   &::before {
     content: "\A";
