@@ -5,7 +5,7 @@ module Dashboard
     def index; end
 
     def search
-      @customers = Customer.joins(:user).where(user_id: current_user.id, deleted: false).search_customer(params[:search])
+      @customers = Customer.joins(:user).where(user_id: current_user.id, deleted: false).search(params[:search])
                            .order('created_at desc').limit(15)
     end
   end
