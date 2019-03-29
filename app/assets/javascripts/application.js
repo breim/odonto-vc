@@ -5,6 +5,7 @@
 
 //= require vendors/masker
 //= require vendors/sweetAlert
+//= require vendors/fullCalendar
 
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/popper.min

@@ -4253,10 +4253,10 @@ File: scss
 }
 
 .fc-toolbar h2 {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 30px;
-    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .fc-day {
@@ -4305,39 +4305,6 @@ File: scss
 .fc-view {
     margin-top: 0px;
 }
-
-.fc-view-container{
-padding:0 1.25rem;
-}
-
-.fc-toolbar {
-    margin: 0px;
-  background:#d3e0fc;
-    padding: 10px 0px;
-}
-
-.fc-button {
-    background: none;
-    border: 0 none;
-  box-shadow:none;
-    color: #000;
-    text-transform: capitalize;
-}
-
-.fc-button:hover {
-    background: #e9edf2;
-    
-}
-
-.fc-text-arrow {
-    font-family: inherit;
-    font-size:20px;
-}
-
-.fc-state-hover {
-    background: #F5F5F5;
-}
-
 .fc-unthemed .fc-today {
     border: 1px solid #ff484c;
     background: #e9edf2 !important;

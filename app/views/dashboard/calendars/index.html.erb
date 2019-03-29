@@ -1,1 +1,105 @@
-hello
+<div id='calendar'></div>
+<div class="modal" tabindex="1" role="dialog" id="newConsultation" >
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nova consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="search">Buscar paciente</label>
+        <input id="search" type="text" name="fname" class="form-control" placeholder="Nome, Celular ou CPF" autocomplete="off"><br> 
+        <div id="customersSearch"></div>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Novo Paciente", new_dashboard_customer_path, remote: true, class: 'btn btn-submit mr-auto'  %>
+        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="consultationForm"></div>
+<div id="customerForm"></div>
+<div id="odontograms"></div>
+
+<%= javascript_include_tag "dashboard/calendars", defer: true %>
+
+<script defer>
+$( document ).ready(function() {
+    var start_date = '';
+    var end_date = '';
+
+    $('#calendar').fullCalendar({
+      minTime: '06:00:00',
+      slotDuration: '00:30:00',
+
+      header: {
+        left: 'title',
+        center: 'today, agendaDay, agendaWeek, month, listWeek',
+        right: 'prev, next'
+      },
+      aspectRatio: 1,
+      dayClick: function(date, jsEvent, view, resourceObj) {
+        localStorage.setItem("date_selected", date.format());
+        $('#newConsultation').modal('toggle');
+      },
+      // View render to get current dates periods of view aviable (prevent massive load of events and db)
+      viewRender: function(view, element) {
+        start_date = moment(view.start).format('DD-MM-YYYY');
+        end_date = moment(view.end).format('DD-MM-YYYY');
+      },
+      eventClick: function(calEvent, jsEvent, view) {
+        $.ajax({
+          async: true,
+          url: '/dashboard/consultas/'+ calEvent.id +'/edit',
+          type: 'GET',
+          dataType: 'script',
+          success: function(response){
+            if(response.status == 'success')
+              alert('processou');
+            },
+            error: function(e){
+              alert('erro ao processar');
+              alert('Error processing your request: '+e.responseText);
+            }
+        });
+      },
+      defaultDate: '<%= Date.today %>',
+      locale: "pt-br",
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: false, // allow "more" link when too many events
+      
+      events: function(start, end, timezone, callback) {
+        $.ajax({
+          async: true,
+          url: '/dashboard/consultas.json',
+          dataType: 'json',
+          data: {
+            // our hypothetical feed requires UNIX timestamps
+            start: start_date,
+            end: end_date
+          },
+          success: function(doc) {
+            var events = [];
+            $.each(doc.consultations, function (i, customer) {
+              events.push({
+                id: $(this).attr('id'),
+                title: $(this).attr('title'),
+                start: $(this).attr('start'),
+                end: $(this).attr('end'),
+                color: '#1b98e0',
+                editable: false
+              });
+            })
+          callback(events);
+          }
+        });
+      }
+    
+    });
+  }); 
+</script>
