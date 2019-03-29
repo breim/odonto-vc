@@ -4701,7 +4701,7 @@ button.close {
 @media (min-width:576px) {
   .modal-dialog {
     max-width:500px;
-    margin:3.75rem auto
+    margin:0rem auto
   }
   .modal-dialog-centered {
     min-height:calc(100% - (1.75rem * 2))
