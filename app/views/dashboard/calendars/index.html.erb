@@ -1,6 +1,6 @@
 <div id='calendar'></div>
-<div class="modal" tabindex="1" role="dialog" id="newConsultation" >
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade bd-example-modal-lg show" tabindex="1" role="dialog" id="newConsultation" >
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Nova consulta</h5>
@@ -12,10 +12,11 @@
         <label for="search">Buscar paciente</label>
         <input id="search" type="text" name="fname" class="form-control" placeholder="Nome, Celular ou CPF" autocomplete="off"><br> 
         <div id="customersSearch"></div>
-      </div>
-      <div class="modal-footer">
-        <%= link_to "Novo Paciente", new_dashboard_customer_path, remote: true, class: 'btn btn-submit mr-auto'  %>
-        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
+        <hr>
+        <div class="modal-footer modal-footer-customers">
+          <%= link_to "<i class='fa fa-plus-circle'></i> Novo Paciente".html_safe, new_dashboard_customer_path, remote: true, class: 'btn waves-effect waves-light btn-outline-primary float-right'  %>
+          <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@ $( document ).ready(function() {
         center: 'today, agendaDay, agendaWeek, month, listWeek',
         right: 'prev, next'
       },
-      aspectRatio: 1,
+      aspectRatio: 1.2,
       dayClick: function(date, jsEvent, view, resourceObj) {
         localStorage.setItem("date_selected", date.format());
         $('#newConsultation').modal('toggle');
