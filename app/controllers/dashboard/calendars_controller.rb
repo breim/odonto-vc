@@ -1,9 +1,12 @@
-# frozen_string_literal: true
-
+# Extend module
 module Dashboard
+  # Controller
   class CalendarsController < Dashboard::DashboardController
-    respond_to :html
-
     def index; end
+
+    def search
+      @customers = Customer.joins(:user).where(user_id: current_user.id, deleted: false).search_customer(params[:search])
+                           .order('created_at desc').limit(15)
+    end
   end
 end
