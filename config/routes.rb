@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get  '/policy', to: 'pages#policy'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: 'registrations' }
 
   get '/dashboard', to: 'dashboard/calendars#index'
   namespace :dashboard do
