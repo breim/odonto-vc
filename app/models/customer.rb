@@ -4,6 +4,7 @@ class Customer < ApplicationRecord
   belongs_to :user
 
   before_save :build_cpf
+  validates :name, presence: true
 
   self.per_page = 25
 
