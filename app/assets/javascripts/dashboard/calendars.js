@@ -18,13 +18,13 @@ function searchCustomersView() {
   });
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
     var start_date = '';
     var end_date = '';
 
     $('#calendar').fullCalendar({
       minTime: '06:00:00',
-      slotDuration: '00:30:00',
+      slotDuration: '00:20:00',
 
       header: {
         left: 'title',
@@ -44,7 +44,7 @@ $( document ).ready(function() {
       eventClick: function(calEvent, jsEvent, view) {
         $.ajax({
           async: true,
-          url: '/dashboard/consultas/'+ calEvent.id +'/edit',
+          url: '/dashboard/consultations/'+ calEvent.id +'/edit',
           type: 'GET',
           dataType: 'script',
           success: function(response){
@@ -66,7 +66,7 @@ $( document ).ready(function() {
       events: function(start, end, timezone, callback) {
         $.ajax({
           async: true,
-          url: '/dashboard/consultas.json',
+          url: '/dashboard/consultations.json',
           dataType: 'json',
           data: {
             // our hypothetical feed requires UNIX timestamps
@@ -75,13 +75,14 @@ $( document ).ready(function() {
           },
           success: function(doc) {
             var events = [];
-            $.each(doc.consultations, function (i, customer) {
+            console.log(doc);
+            $.each(doc, function (i, customer) {
               events.push({
                 id: $(this).attr('id'),
                 title: $(this).attr('title'),
                 start: $(this).attr('start'),
                 end: $(this).attr('end'),
-                color: '#1b98e0',
+                color: '#4886ff',
                 editable: false
               });
             })

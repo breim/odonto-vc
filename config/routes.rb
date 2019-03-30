@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard/calendars#index'
   namespace :dashboard do
     resources :customers
+    resources :consultations
     resources :calendars, path: 'agenda', only: %i[index] do
       get 'search', on: :collection
     end
