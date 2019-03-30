@@ -16,6 +16,7 @@ class Customer < ApplicationRecord
 
   def build_cpf
     return false if cpf.nil?
+
     cpf.gsub!(/\D/, '')
   end
 end
