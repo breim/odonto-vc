@@ -4324,15 +4324,15 @@ File: scss
 .fc-event {
     border-radius: 0px;
     border: none;
-    cursor: move;
-    color: #000000 !important;
+    cursor: pointer;
+    color: #fff !important;
     font-size: 13px;
     margin: 1px -1px 0 -1px;
     padding: 5px 5px;
     text-align: center;
     background: #ff484c;
 }
-.fc-event:hover{background:none!important;}
+
 .fc-event.bg-primary,
 .fc-event.bg-info{background:none!important; border-bottom:2px solid #4886ff }
 .fc-event.bg-danger{background:none!important; border-bottom:2px solid #ff484c}
