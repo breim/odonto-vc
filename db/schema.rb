@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_141914) do
+ActiveRecord::Schema.define(version: 2019_03_30_180621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "consultations", force: :cascade do |t|
+    t.date "date"
+    t.string "hour"
+    t.string "duration"
+    t.text "annotation"
+    t.boolean "deleted", default: false
+    t.bigint "user_id"
+    t.bigint "customer_id"
+    t.boolean "canceled", default: false
+    t.boolean "sms_sent", default: false
+    t.date "sms_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_consultations_on_customer_id"
+    t.index ["user_id"], name: "index_consultations_on_user_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -58,5 +75,7 @@ ActiveRecord::Schema.define(version: 2019_03_26_141914) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "consultations", "customers"
+  add_foreign_key "consultations", "users"
   add_foreign_key "customers", "users"
 end

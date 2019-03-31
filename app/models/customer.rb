@@ -3,6 +3,9 @@
 class Customer < ApplicationRecord
   belongs_to :user
 
+  before_save :build_cpf
+  validates :name, presence: true
+
   self.per_page = 25
 
   include PgSearch
@@ -10,4 +13,10 @@ class Customer < ApplicationRecord
                            using: {
                              tsearch: { prefix: true }
                            }
+
+  def build_cpf
+    return false if cpf.nil?
+
+    cpf.gsub!(/\D/, '')
+  end
 end
