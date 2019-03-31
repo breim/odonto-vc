@@ -22,7 +22,12 @@
     </tbody>
   </table>
 <% else %>
-  <h5>Você não tem pacientes :/</h5>
+  </br>
+  <% if params[:search] %>
+    <h5>Não encontramos pacientes de acordo com a busca</h5>
+  <% else %>
+    <h5>Você não tem pacientes :/</h5>
+  <% end %>
 <% end %>
 
 
