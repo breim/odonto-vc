@@ -4569,7 +4569,8 @@ button.close {
   -webkit-appearance:none
 }
 .modal-open {
-  overflow:hidden
+  padding-right: 0px !important;
+  overflow:hidden;
 }
 .modal {
   position:fixed;
