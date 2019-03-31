@@ -42,22 +42,26 @@ html {
   font-family:sans-serif;
   line-height:1.15;
 }
+
 @-ms-viewport {
   width:device-width
 }
+
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display:block
 }
+
 body {
   background: #f6f7fb;
   font-family: 'Work Sans', sans-serif;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   color: #222222;
   font-weight: 400;
   font-size: 14px;
   text-align:left;
 }
+
 [tabindex="-1"]:focus {
   outline:0!important
 }
