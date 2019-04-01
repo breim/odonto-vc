@@ -1,0 +1,2 @@
+$("#customersSearch").empty();
+$("#customersSearch").append("<%= escape_javascript render(partial: 'customers', locals: { object: @customers }) %>");
