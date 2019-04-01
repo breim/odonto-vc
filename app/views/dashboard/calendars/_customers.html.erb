@@ -1,0 +1,25 @@
+<ul class="list-group">
+  <% @customers.each do |customer| %>
+  <a href="<%= new_dashboard_consultation_url(customer_id: customer.id) %>" data-remote="true" class="list-customers">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-lg-2 col-sm-2 col-2">
+          <%# image_tag(customer.image_path(:medium), class: 'img-fluid', width: 60) %>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-6 customer-name">
+          <%= customer.name %><br/>
+          <small><%= customer.age %></small><br/>
+        </div>
+        <div class="col-sm-4 col-4 customer-name">
+          <%= customer.email %><br/>
+          <small><%= customer.celphone %></small>
+        </div>
+      </div>
+    </li>
+  </a>
+  <% end %>
+</ul>
+
+<% if @customers.empty? %>
+  <p class="text-center text-muted"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Não encontramos resultados</p>
+<% end %>
