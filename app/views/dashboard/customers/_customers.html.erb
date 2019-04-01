@@ -40,7 +40,6 @@
         type: "GET", 
         url: '/dashboard/customers/' + $(this).find("td").first().text() + '/edit',
         dataType: 'script',
-        // data: $(this).find("td").first().text()+ "/edit",
         success: function(repsonse){
           console.log('success')
         },
