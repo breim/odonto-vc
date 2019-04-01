@@ -12,7 +12,7 @@ function searchCustomersView() {
   $.ajax({
     async: true,
     dataType: "script",
-    url: "/dashboard/customers?search=" + search_field,
+    url: "/dashboard/calendars?search=" + search_field,
   }).done(function() {
     $( this ).addClass( "done" );
   });
