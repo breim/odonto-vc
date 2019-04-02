@@ -198,7 +198,7 @@
         <div class="modal-footer modal-footer-customers">
           <%= link_to 'Deletar o Paciente', dashboard_customer_path(@customer.id), class: 'btn btn-outline-danger mr-auto', remote: true, method: :delete, data: { confirm: "Você realmente quer deletar o paciente ?" } if action_name == 'edit' %>
           <%= f.button :submit, class: 'btn btn-outline-primary float-right' do %>
-            <i class='fa fa-plus-circle' aria-hidden='true'></i> Salvar
+            <i class='fa fa-check' aria-hidden='true'></i> Salvar
           <% end %>
           <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
         </div>
