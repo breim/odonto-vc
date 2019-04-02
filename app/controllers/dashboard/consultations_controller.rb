@@ -21,7 +21,7 @@ module Dashboard
 
     def new
       @consultation = Consultation.new
-      @customer = Customer.find(params[:customer_id])
+      @customer = Customer.find(params[:customer_id]).decorate
       respond_with(@consultation)
     end
 
