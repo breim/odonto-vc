@@ -6,6 +6,7 @@
 //= require vendors/masker
 //= require vendors/sweetAlert
 //= require vendors/fullCalendar
+//= require vendors/jquery.datetimepicker
 
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/modal-fix.js

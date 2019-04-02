@@ -1,6 +1,8 @@
-/* mintone import css */
-@import 'dashboard/calendars';
 
+@import 'vendors/calendars';
+@import 'vendors/jquery.datetimepicker';
+
+/* mintone import css */
 @import 'themes/mintone/bootstrap';
 @import 'themes/mintone/fontawesome';
 @import 'themes/mintone/mintone';
