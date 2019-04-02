@@ -1,0 +1,90 @@
+<div class="modal" tabindex="-1" role="dialog" id="consultationsRegistration">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Agendar consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for([:dashboard, @consultation], remote: true) do |f| %>
+        <% customer = @consultation.customer || @customer %>
+        <div class="row">
+          <div class="col-sm-2">
+            <%# image_tag(customer.image_path(:medium), class: 'img-fluid', width: 100) %>
+          </div>
+          <div class="col-sm-7">
+            <ul style="list-style-type:none">
+              <li>
+                <%= link_to "#{customer.try(:name)}".html_safe, edit_dashboard_customer_url(customer.id), remote: true %>
+                <small><%= customer.age %></small>
+              </li>
+              <li>
+                <strong>Celular:</strong> <%= customer.try(:celphone) %>
+              </li>
+              <li>
+                <strong>Telefone:</strong> <%= customer.try(:phone) %>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr/>
+
+        <div class="form-inputs">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group required">
+                <%= f.label :date, "Data" %>
+                <%= f.text_field :date, value: @consultation.date.try(:strftime, '%d/%m/%Y'), required: true, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group required">
+                <%= f.label :hour, "Hora" %>
+                <%= f.text_field :hour, required: true, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <%= f.label :duration, "Duração do atendimento" %>
+                <%= f.select(:duration, ["00:20", "00:25", "00:30", "00:35", "00:40", "00:45",
+                  "00:50", "00:55", "01:00", "01:15", "01:30", "01:45", "02:00", "02:15", "02:30",
+                  "02:45", "03:00", "03:15", "03:30", "03:45", "04:00", "04:15", "04:30", "04:30",
+                  "04:45", "05:00"], {}, { class: 'form-control' }  )%>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <%= f.label :annotation, "Anotações" %>
+                <%= f.text_area :annotation, rows: 3, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <% if customer.celphone.empty? %>
+        <div class="alert alert-warning" role="alert">
+          <strong>Aviso!</strong> não podemos enviar o SMS pois paciente não tem o celular cadastrado.
+        </div>
+        <% end %>
+
+        <div class="modal-footer modal-footer-customers">
+          <%= link_to 'Cancelar consulta', dashboard_consultation_path(@consultation.id), class: 'btn btn-outline-danger mr-auto float-left', remote: true, method: :delete if action_name == 'edit' %>
+          <%= f.hidden_field :customer_id, value: @consultation.customer.try(:id) || params[:customer_id] %>
+          <%= f.button :submit, class: 'btn btn-outline-primary float-right' do %>
+            <i class='fa fa-check' aria-hidden='true'></i> Salvar
+          <% end %>
+          <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Fechar</button>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'dashboard/consultations' %>

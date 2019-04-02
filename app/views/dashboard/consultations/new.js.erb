@@ -1,0 +1,5 @@
+$("#consultationsRegistration").remove();
+$("#consultationForm").append("<%= escape_javascript render(partial: 'form', locals: { object: @consultation }) %>");
+$('#calendar').fullCalendar('refetchEvents');
+$("#consultationsRegistration").modal('toggle');
+$('#consultation_date').val(moment(localStorage["date_selected"]).format('DD/MM/YYYY'));
