@@ -10,8 +10,7 @@ module Dashboard
 
     def index
       @consultations = Consultation.joins(:user, :customer).where(consultations: { user_id: current_user.id, canceled: false })
-                                   .where(consultations: { date: params[:start].to_date.beginning_of_day..params[:end].to_date.end_of_day })#.decorate
-                                   .select('*, consultations.id AS consultation_id, customers.name AS customer_name')
+                                   .where(consultations: { date: params[:start].to_date.beginning_of_day..params[:end].to_date.end_of_day })
       respond_with(@consultations)
     end
 

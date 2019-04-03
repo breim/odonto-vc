@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
 class ConsultationSerializer < ActiveModel::Serializer
-  attributes :id, :title, :start, :end, :token, :disabled
-
-  def id
-    object.consultation_id
-  end
+  attributes :id, :title, :start, :end
 
   def title
-    object.customer_name
+    object.customer.name
   end
 
   def start
