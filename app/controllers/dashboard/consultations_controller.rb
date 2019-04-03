@@ -26,7 +26,7 @@ module Dashboard
     end
 
     def edit
-      @customer = Consultation.joins(:customer).where(id: @consultation.id)
+      @customer = Consultation.find(@consultation.id).customer.decorate
     end
 
     def create

@@ -1,0 +1,4 @@
+$("#consultationsRegistration").remove();
+$("#consultationsRegistration").modal('toggle');
+$("#consultationForm").append("<%= escape_javascript render(partial: 'form', object: @consultation) %>");
+$("#consultationsRegistration").modal('toggle');

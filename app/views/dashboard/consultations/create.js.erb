@@ -1,0 +1,8 @@
+<% if @consultation.valid? %>
+  $("#newConsultation").modal('toggle');
+  $("#consultationsRegistration").modal('toggle');
+  $('#calendar').fullCalendar('refetchEvents');
+  swal("Sucesso!", "Operação realizada.", "success");
+<% else %>
+  sweetAlert("Ops!", "Verifique novamente o formulário", "error");
+<% end %>

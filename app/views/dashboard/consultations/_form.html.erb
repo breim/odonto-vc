@@ -19,7 +19,7 @@
             <ul style="list-style-type:none">
               <li>
                 <%= link_to "#{customer.try(:name)}".html_safe, edit_dashboard_customer_url(customer.id), remote: true %>
-                <small><%= customer.age %></small>
+                <small><%= @customer.age %></small>
               </li>
               <li>
                 <strong>Celular:</strong> <%= customer.try(:celphone) %>
@@ -38,13 +38,13 @@
             <div class="col-sm-3">
               <div class="form-group required">
                 <%= f.label :date, "Data" %>
-                <%= f.text_field :date, value: @consultation.date.try(:strftime, '%d/%m/%Y'), required: true, class: 'form-control' %>
+                <%= f.text_field :date, value: @consultation.date.try(:strftime, '%d/%m/%Y'), required: true, class: 'form-control', autocomplete: "disabled" %>
               </div>
             </div>
             <div class="col-sm-3">
               <div class="form-group required">
                 <%= f.label :hour, "Hora" %>
-                <%= f.text_field :hour, required: true, class: 'form-control' %>
+                <%= f.text_field :hour, required: true, class: 'form-control', autocomplete: "disabled" %>
               </div>
             </div>
             <div class="col-sm-3">
