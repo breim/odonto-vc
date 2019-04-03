@@ -51,8 +51,9 @@ module Dashboard
       @consultation = Consultation.find(params[:id])
     end
 
+
     def consultation_params
-      params.require(:consultation).permit(:customer_id, :date, :hour, :duration, :annotation)
+      params.require(:consultation).permit(:customer_id, :date, :hour, :duration, :annotation, :color)
     end
   end
 end

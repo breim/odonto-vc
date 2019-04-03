@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_180621) do
+ActiveRecord::Schema.define(version: 2019_04_03_094006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_180621) do
     t.date "sms_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
     t.index ["customer_id"], name: "index_consultations_on_customer_id"
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end

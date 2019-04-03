@@ -82,7 +82,7 @@ $(document).ready(function() {
                 title: $(this).attr('title'),
                 start: $(this).attr('start'),
                 end: $(this).attr('end'),
-                color: '#4886ff',
+                color: $(this).attr('color')? $(this).attr('color') : '#4886ff',
                 editable: false
               });
             })

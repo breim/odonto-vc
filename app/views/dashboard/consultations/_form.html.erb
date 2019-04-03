@@ -56,6 +56,12 @@
                   "04:45", "05:00"], {}, { class: 'form-control' }  )%>
               </div>
             </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <%= f.label :color, "Cor do evento" %>
+                <%= f.select(:color, [['Azul', '#4886ff'], ['Verde', '#7ad835'], ['Vermelho', '#ff484c'], ['Laranja', '#fa7d03']], {}, { class: 'form-control' }  )%>
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
