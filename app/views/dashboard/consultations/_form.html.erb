@@ -74,7 +74,7 @@
         <% end %>
 
         <div class="modal-footer modal-footer-customers">
-          <%= link_to 'Cancelar consulta', dashboard_consultation_path(@consultation.id), class: 'btn btn-outline-danger mr-auto float-left', remote: true, method: :delete if action_name == 'edit' %>
+          <%= link_to 'Cancelar consulta', dashboard_consultation_path(@consultation.id), class: 'btn btn-outline-danger mr-auto float-left', remote: true, method: :delete, data: { confirm: 'Você tem certeza ?' } if action_name == 'edit' %>
           <%= f.hidden_field :customer_id, value: @consultation.customer.try(:id) || params[:customer_id] %>
           <%= f.button :submit, class: 'btn btn-outline-primary float-right' do %>
             <i class='fa fa-check' aria-hidden='true'></i> Salvar
