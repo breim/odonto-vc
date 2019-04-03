@@ -3,6 +3,10 @@
 class ConsultationSerializer < ActiveModel::Serializer
   attributes :id, :title, :start, :end, :token, :disabled
 
+  def id
+    object.consultation_id
+  end
+
   def title
     object.customer_name
   end
