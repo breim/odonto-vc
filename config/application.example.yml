@@ -5,3 +5,4 @@ development:
   facebook_app_secret: '12312123123123'
   facebook_callback_url: 'http://localhost:3000/users/auth/facebook/callback'
   PAPERCLIP_SECRET: 'adasdsadsadasdasd'
+  AWS_CDN_URL: 'http://localhost:3000'
