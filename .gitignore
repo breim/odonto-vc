@@ -28,3 +28,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore images uploaded in development env
+/public/images/**/**
+
