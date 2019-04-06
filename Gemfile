@@ -36,6 +36,8 @@ gem 'draper'
 gem 'rubocop'
 # multi-search in database
 gem 'pg_search'
+# Paperclip
+gem 'paperclip', '5.1.0'
 # BRL Money
 gem 'brdinheiro'
 # Pagination

@@ -38,7 +38,7 @@ class Customer < ApplicationRecord
                     default_url: :set_default_url
 
   def set_default_url
-    'missing_customer.png'
+    '/missing_customer.png'
   end
 
   def image_path(style)

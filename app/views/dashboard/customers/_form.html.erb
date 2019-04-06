@@ -100,19 +100,24 @@
               </div>
 
               <div class="col-lg-4 col-md-4 col-sm-3">
-                <div id="photo">
-                  <div class="form-customer-img">
-                    <%# image_tag(@customer.image_path(:medium), id: 'cust_img') %>
+                <div class="row justify-content-md-center">
+                  <div class="col-sm-6">
+                    <div id="photo" class="form-group">
+                      <%= image_tag(@customer.image_path(:medium), id: 'cust_img', class: 'img-fluid') %>
+                    </div>
                   </div>
-                  <div id="my_camera"></div>
-                  <div class="form-group">
-                    <button type=button onClick="new_photo()" class="btn btn-outline-primary btn-xs">Foto da WebCam</button>
-                    <button type=button onClick="take_snapshot()" id="take_photo" class="btn btn-success btn-xs">Bater foto</button>
-                  </div>
-                  <div class="form-group">
-                    <%# f.file_field :image %>
-                    <%# f.hidden_field :image_base64 %>
-                  </div>
+                </div>
+                <div id="my_camera"></div>
+                <div class="form-group">
+                  <button type=button onClick="new_photo()" class="btn btn-outline-primary btn-xs">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                    Foto da WebCam
+                  </button>
+                  <button type=button onClick="take_snapshot()" id="take_photo" class="btn btn-success btn-xs">Bater foto</button>
+                </div>
+                <div class="form-group">
+                  <%= f.file_field :image %>
+                  <%= f.hidden_field :image_base64 %>
                 </div>
               </div>
             </div>
