@@ -42,7 +42,7 @@ class Customer < ApplicationRecord
   end
 
   def image_path(style)
-    ENV['AWS_CDN_URL'].to_s + image(style.to_sym)
+    ENV['AWS_CDN'].to_s + image(style.to_sym).split('/images/').last
   end
 
   protected
