@@ -349,6 +349,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  addressable
   bootsnap (>= 1.1.0)
   brdinheiro
   byebug
