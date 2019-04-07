@@ -47,6 +47,7 @@ class Customer < ApplicationRecord
 
   def decode_base64_image
     return false if image_base64 == ''
+
     image = Paperclip.io_adapters.for(image_base64)
     image.original_filename = 'webcam.png'
     self.image = image
