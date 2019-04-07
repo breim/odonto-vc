@@ -28,3 +28,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore images
+/public/images/**

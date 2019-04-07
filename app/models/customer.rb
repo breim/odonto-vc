@@ -3,8 +3,9 @@
 class Customer < ApplicationRecord
   belongs_to :user
 
-  before_save :build_cpf
   validates :name, presence: true
+  before_save :build_cpf
+
 
   self.per_page = 25
 
@@ -20,29 +21,24 @@ class Customer < ApplicationRecord
     cpf.gsub!(/\D/, '')
   end
 
-  # Paperclip
-  attr_accessor :image_base64
-  has_attached_file :image
-  validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-
-  validates_attachment_size :image, less_than: 30.megabytes
-
   has_attached_file :image,
                     styles: {
                       large: '512x512#', medium: '200x200#',
                       thumb: '100x100#'
                     },
-                    hash_secret: ENV['PAPERCLIP_SECRET'],
+                    hash_secret: ENV['paperclip_secret'],
                     url: '/images/customers/:hash.:extension',
-                    path: '/images/customers/:hash.:extension',
+                    path: ':rails_root/public/images/customers/:hash.:extension',
                     default_url: :set_default_url
+  validates_attachment_content_type :image, content_type: /image/
+  validates_attachment_size :image, less_than: 30.megabytes
 
   def set_default_url
-    '/missing_customer.png'
+    ENV['AWS_CDN_URL'].to_s + '/missing_customer.png'
   end
 
   def image_path(style)
-    ENV['AWS_CDN'].to_s + image(style.to_sym).split('/images/').last
+    ENV['AWS_CDN_URL'].to_s + image(style.to_sym).split('/images/').last
   end
 
   protected
