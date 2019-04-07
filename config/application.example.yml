@@ -6,3 +6,6 @@ development:
   facebook_callback_url: 'http://localhost:3000/users/auth/facebook/callback'
   paperclip_secret: 'adasdsadsadasdasd'
   AWS_CDN_URL: 'http://localhost:3000'
+  sms_web_service: ''
+  loca_sms_number: ''
+  loca_sms_pass: ''
