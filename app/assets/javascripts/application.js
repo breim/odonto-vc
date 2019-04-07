@@ -7,6 +7,7 @@
 //= require vendors/sweetAlert
 //= require vendors/fullCalendar
 //= require vendors/jquery.datetimepicker
+//= require vendors/webcam
 
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/modal-fix.js
@@ -15,4 +16,3 @@
 //= require themes/mintone/custom
 //= require themes/mintone/jquery.toast
 //= require themes/mintone/jQuery.style.switcher
-

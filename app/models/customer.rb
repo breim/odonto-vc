@@ -4,8 +4,9 @@ class Customer < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
-  before_save :build_cpf
 
+  before_save :build_cpf
+  before_save :decode_base64_image
 
   self.per_page = 25
 
@@ -21,10 +22,11 @@ class Customer < ApplicationRecord
     cpf.gsub!(/\D/, '')
   end
 
+  attr_accessor :image_base64
   has_attached_file :image,
                     styles: {
-                      large: '512x512#', medium: '200x200#',
-                      thumb: '100x100#'
+                      large: '512x288>', medium: '240x180>',
+                      thumb: '120x56.25>'
                     },
                     hash_secret: ENV['paperclip_secret'],
                     url: '/images/customers/:hash.:extension',

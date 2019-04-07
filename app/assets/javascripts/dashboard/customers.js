@@ -2,7 +2,6 @@
 VMasker(document.querySelector("#customer_phone")).maskPattern("(99) 9999-9999");
 VMasker(document.querySelector("#customer_celphone")).maskPattern("(99) 99999-9999");
 VMasker(document.querySelector("#customer_cpf")).maskPattern("999.999.999-99");
-VMasker(document.querySelector("#customer_zipcode")).maskPattern("99999-999");
 
 function cpfVal(cpf){
   if (validateCPF(cpf)){
@@ -78,4 +77,34 @@ $("#customer_zipcode").blur(function() {
     //cep sem valor, limpa formulário.
     limpa_formulário_cep();
   }
+});
+
+
+
+$('#my_camera').hide();
+$('#take_photo').hide();
+function new_photo(){
+  Webcam.set({
+    width: 240,
+    height: 180,
+    image_format: 'jpeg',
+    jpeg_quality: 100
+  });
+  Webcam.attach( '#my_camera' );
+  $('#cust_img').hide();
+  $('#my_camera').show();
+  $('#take_photo').show();
+}
+
+function take_snapshot() {
+  Webcam.snap( function(data_uri) {
+    $("#cust_img").attr("src", data_uri);
+    $('#my_camera').hide();
+    $('#cust_img').show();
+    $('#customer_image_base64').val(data_uri);
+  } );
+}
+
+$('#customersRegistration').on("hidden.bs.modal", function () {
+  Webcam.reset();
 });

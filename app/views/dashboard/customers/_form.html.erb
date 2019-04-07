@@ -101,13 +101,15 @@
 
               <div class="col-lg-4 col-md-4 col-sm-3">
                 <div class="row justify-content-md-center">
-                  <div class="col-sm-6">
-                    <div id="photo" class="form-group">
-                      <%= image_tag(@customer.image(:medium), id: 'cust_img', class: 'img-fluid') %>
+                  <div class="col-sm-9">
+                    <div class="form-group">
+                      <div id="photo">
+                        <%= image_tag(@customer.image(:medium), id: 'cust_img', class: 'img-fluid') %>
+                      </div>
+                      <div id="my_camera"></div>
                     </div>
                   </div>
                 </div>
-                <div id="my_camera"></div>
                 <div class="form-group">
                   <button type=button onClick="new_photo()" class="btn btn-outline-primary btn-xs">
                     <i class="fa fa-camera" aria-hidden="true"></i>
