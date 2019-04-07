@@ -13,7 +13,7 @@
         <% customer = @consultation.customer || @customer %>
         <div class="row">
           <div class="col-sm-2">
-            <%# image_tag(customer.image_path(:medium), class: 'img-fluid', width: 100) %>
+            <%= image_tag(customer.image(:medium), class: 'img-fluid') %>
           </div>
           <div class="col-sm-7">
             <ul style="list-style-type:none">

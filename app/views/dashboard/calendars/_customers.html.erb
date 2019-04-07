@@ -4,7 +4,7 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-lg-2 col-sm-2 col-2">
-          <%# image_tag(customer.image_path(:medium), class: 'img-fluid', width: 60) %>
+          <%= image_tag(customer.image(:thumb), class: 'img-fluid', width: 60) %>
         </div>
         <div class="col-lg-6 col-sm-6 col-6 customer-name">
           <%= customer.name %><br/>
