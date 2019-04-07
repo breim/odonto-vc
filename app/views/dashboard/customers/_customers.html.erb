@@ -12,7 +12,8 @@
     <tbody>
       <% @customers.each do |customer| %>
       <tr class='clickable-row list-customers' data-remote="true">
-        <td><%= customer.id %></td>
+        <td style="display: none"><%= customer.id %></td>
+        <td><%= image_tag(customer.image(:thumb), class: 'img-fluid') %></td>
         <td><%= customer.name %></td>
         <td><%= customer.age %></td>
         <td><%= customer.celphone %></td>
