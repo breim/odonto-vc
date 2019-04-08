@@ -2,6 +2,7 @@
 
 class Customer < ApplicationRecord
   belongs_to :user
+  has_many :consultations
 
   validates :name, presence: true
 

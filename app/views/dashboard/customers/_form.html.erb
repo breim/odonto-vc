@@ -189,7 +189,26 @@
 
           <!-- Histórico -->
           <div class="tab-pane fade" id="historic" role="tabpanel">
-            Histórico
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Dia</th>
+                  <th scope="col">Hora</th>
+                  <th scope="col">Duração</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @customer.consultations.each do |consultation| %>
+                  <tr>
+                    <td><%= consultation.date.try(:strftime, '%d/%m/%Y') %></td>
+                    <td><%= consultation.hour %></td>
+                    <td><%= consultation.duration %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
           </div>
 
           <!-- Anotações -->
