@@ -9,3 +9,6 @@ development:
   sms_web_service: ''
   loca_sms_number: ''
   loca_sms_pass: ''
+  pagarme_api_key: ''
+  pagarme_encript_key: ''
+  
