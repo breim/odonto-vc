@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-lg-5 col-md-3 col-sm-4">
+    <h3>Planos</h3>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-4 offset-md-6 offset-sm-5">
+    <%= link_to "Suporte".html_safe, root_path, remote: true, class: 'btn btn-rounded waves-effect waves-light btn-outline-primary float-right' %>
+  </div>
+</div>
+
+
+<div id="customers">
+  <div class="row">  
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="">Gratuito</h3>
+          <h4 class="comparison">R$ 0,00<small> / mês</small></h4>
+ 
+          <hr/>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Cras justo odio</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Dapibus ac facilisis in</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Morbi leo risus</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Porta ac consectetur ac</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Vestibulum at eros</li>
+          </ul>
+
+          <hr/>
+
+          <button type="button" class="btn waves-effect waves-light btn-lg btn-rounded btn-primary w-100 disabled">PLANO ATUAL</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="">Premium</h3>
+          <h4 class="comparison">R$ 69,90<small> / mês</small></h4>
+ 
+          <hr/>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Cras justo odio</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Dapibus ac facilisis in</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Morbi leo risus</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Porta ac consectetur ac</li>
+            <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Vestibulum at eros</li>
+          </ul>
+
+          <hr/>
+
+
+          <%= form_tag root_path, method: 'post' do %>
+            <script type="text/javascript"
+              src="https://assets.pagar.me/checkout/1.1.0/checkout.js"
+              data-button-class="btn waves-effect waves-light btn-lg btn-rounded btn-primary w-100"
+              data-button-text="SEJA PREMIUM"
+              data-encryption-key="<%= ENV['pagarme_encript_key'] %>"
+              data-amount="<%= 6990 %>"
+              data-payment-methods="credit_card"
+              data-customer-data="false"
+              data-postback-url="http://localhost:3000/recurrent_subscriptions"
+              data-create-token="false">
+            </script>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPT PAGAR.ME -->
+    <script src="https://assets.pagar.me/checkout/1.1.0/checkout.js"></script>
+
+
+    <script>
+    var button = document.querySelector('button');
+
+    // Abrir o modal ao clicar no botão
+    button.addEventListener('click', function() {
+
+      // inicia a instância do checkout
+      var checkout = new PagarMeCheckout.Checkout({
+        encryption_key: 'SUA ENCRYPTION KEY',
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(err) {
+          console.log(err);
+        },
+        close: function() {
+          console.log('The modal has been closed.');
+        }
+      });
+
+      // Obs.: é necessário passar os valores boolean como string
+      checkout.open({
+        amount: 8000,
+        buttonText: 'Pagar',
+        buttonClass: 'botao-pagamento',
+        customerData: 'false',
+        createToken: 'true',
+        paymentMethods: 'credit_card',
+        customer: {
+          external_id: '#123456789',
+          name: 'Fulano',
+          type: 'individual',
+          country: 'br',
+          email: 'fulano@email.com',
+          documents: [
+            {
+              type: 'cpf',
+              number: '71404665560',
+            },
+          ],
+          phone_numbers: ['+5511999998888', '+5511888889999'],
+          birthday: '1985-01-01'
+        }
+      });
+    });
+    </script>
+

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     resources :customers
     resources :consultations
+    resources :plans
     resources :calendars, only: %i[index] do
       get 'search', on: :collection
     end
