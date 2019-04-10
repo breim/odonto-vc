@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   get  '/policy', to: 'pages#policy'
+  resources :tickets, only: :create
 
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks', registrations: 'registrations' }
 

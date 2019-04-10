@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav menu w_menu ml-auto">
             <li class="nav-item dropdown submenu">
-              <%= link_to 'Suporte', root_path, class: 'nav-link'  %>
+              <%= link_to "Suporte", '#', class: 'nav-link', data: { toggle: 'modal', target: '#ticket' } %>
             </li>
             <li class="nav-item dropdown submenu active">
               <%= link_to 'Entrar', new_user_session_path, class: 'nav-link'  %>

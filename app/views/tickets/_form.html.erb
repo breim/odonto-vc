@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="ticketTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="ticketLongTitle">Ticket de suporte</h5>
@@ -32,16 +32,16 @@
           <div class="col-sm-12">
             <div class="form-group required">
               <%= f.label :description, "Em que podemos te ajudar ?" %>
-              <%= f.text_area :description, class: 'form-control', required: true  %>
+              <%= f.text_area :description, rows: 5, class: 'form-control', required: true  %>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <div class="modal-footer modal-footer-customers">
+          <%= f.submit "Solicitar suporte", class: 'btn btn-outline-primary float-right' %>
+          <button type="button" class="btn btn-outline-secondary float-right" data-dismiss="modal">Fechar</button>
           <%= f.hidden_field :user_id, value: current_user.try(:id) %>
-          <%= f.submit "Solicitar suporte", class: 'btn btn-submit' %>
-          <% end %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
