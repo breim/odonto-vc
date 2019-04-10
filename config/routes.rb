@@ -17,6 +17,12 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/admin', to: 'admin/admin#index'
+  namespace :admin do
+    resources :users
+    resources :tickets, only: %i[index show update]
+  end
+
   namespace :api, path: 'api/v1', constraints: { format: 'json' } do
     resources :users, only: :create
   end
