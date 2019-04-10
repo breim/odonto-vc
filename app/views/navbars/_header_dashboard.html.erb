@@ -20,6 +20,9 @@
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
+                    <%= link_to "<i class='fa fa-hand-spock-o'></i> Admin".html_safe, admin_path, method: :get if current_user.admin? %>
+                  </li>
+                  <li>
                     <%= link_to "<i class='fa fa-sign-out mr-1'></i> Logout".html_safe, destroy_user_session_path, method: :get %>
                   </li>
                 </ul>

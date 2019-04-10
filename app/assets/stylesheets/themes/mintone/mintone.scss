@@ -5585,7 +5585,7 @@ ul.timeline>li>.timeline-panel:after {right: auto; left: -14px;       border-rig
 
 .knob-icon {position:relative;}
 .knob-icon input{font-size:0!important}
-.knob-icon i{position:absolute; z-index:9; font-size:23px; top:19px; left:24px;}
+.knob-icon i{position:absolute; z-index:9; top:19px; left:24px;}
 .knob-icon img{position:absolute; z-index:9; top:19px; left:24px; width:24px}
 .knob-icon-2 i{ top:15px; }
 .refresh-container {background: rgba(255,255,255,.9); height: 100%; left: 0;position: absolute; top: 0; width: 100%; display: none; z-index: 5; cursor: wait; overflow: hidden;}

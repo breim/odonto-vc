@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  self.per_page = 25
+
   include PgSearch
   pg_search_scope :search, against: %i[name celphone cpf],
                            using: {

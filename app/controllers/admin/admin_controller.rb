@@ -6,6 +6,10 @@ module Admin
     before_action :restric_area
     layout 'admin'
 
+    def index
+      @users = UserDecorator.decorate(User.all)
+    end
+
     private
 
     def restric_area
