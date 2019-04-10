@@ -12,7 +12,7 @@
             <div class="align-slef-center mr-auto">
               <h2 class="m-b-0 text-uppercase font-18 font-medium">Total de usuários</h2>
               <h6 class="text-light m-b-0">
-                Total <strong><%= @users.count %></strong> / Hoje <strong><%= @users.created_last_week %></strong>
+                Total <strong><%= @users.count %></strong> / Ult. semana <strong><%= @users.created_last_week %></strong>
               </h6>
             </div>
           </div>
@@ -61,13 +61,15 @@
   </div>
 </div>
 
-
-
 <div class="row">  
   <div class="col-lg-8 col-md-12">
     <div class="card">
       <div class="card-body">
-        <%= line_chart User.group_by_day(:created_at).count %>
+        <h2 class="m-b-0 text-uppercase font-18 font-medium">
+          <i class="fa fa-paper-plane-o" style="color: #67b72c;"></i> Mensagens enviadas
+        </h2>
+        <br/>
+        <%= area_chart User.group_by_day(:created_at).count, colors: ['#7ad835'] %>
       </div>
     </div>
   </div>
