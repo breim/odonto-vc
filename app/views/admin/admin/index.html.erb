@@ -1,19 +1,73 @@
 <div class="row">  
-  <div class="col-sm-12">
+  <div class="col-lg-4 col-md-6">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" style="padding: 0rem !important">
         <div class="d-flex pt-3 pb-2 no-block">
-          <div class="align-self-center mr-3 knob-icon">
+          <div class="align-self-center mr-3 knob-icon" style="color: #EF5476;">
             <div style="display:inline;width:70px;height:70px;">
               <canvas width="70" height="70"></canvas>
             </div>
               <i class="fa fa-users fa-2x"></i> 
             </div>
             <div class="align-slef-center mr-auto">
-              <h2 class="m-b-0 text-uppercase font-18 font-medium lp-5">Total de usuários</h2>
-              <h6 class="text-light m-b-0">Total <strong><%= @users.count %></strong> / Hoje <strong><%= @users.created_last_week %></strong></h6>
+              <h2 class="m-b-0 text-uppercase font-18 font-medium">Total de usuários</h2>
+              <h6 class="text-light m-b-0">
+                Total <strong><%= @users.count %></strong> / Hoje <strong><%= @users.created_last_week %></strong>
+              </h6>
             </div>
           </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6">
+    <div class="card">
+      <div class="card-body" style="padding: 0rem !important">
+        <div class="d-flex pt-3 pb-2 no-block">
+          <div class="align-self-center mr-3 knob-icon" style="color: #4886FF;">
+            <div style="display:inline;width:70px;height:70px;">
+              <canvas width="70" height="70"></canvas>
+            </div>
+              <i class="fa fa-usd fa-2x"></i> 
+            </div>
+            <div class="align-slef-center mr-auto">
+              <h2 class="m-b-0 text-uppercase font-18 font-medium">Assinaturas ativas</h2>
+              <h6 class="text-light m-b-0">
+                <strong>R$ 1.200,00</strong>
+              </h6>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6">
+    <div class="card">
+      <div class="card-body" style="padding: 0rem !important">
+        <div class="d-flex pt-3 pb-2 no-block">
+          <div class="align-self-center mr-3 knob-icon" style="color: #fa7d03;">
+            <div style="display:inline;width:70px;height:70px;">
+              <canvas width="70" height="70"></canvas>
+            </div>
+              <i class="fa fa-ticket fa-2x"></i> 
+            </div>
+            <div class="align-slef-center mr-auto">
+              <h2 class="m-b-0 text-uppercase font-18 font-medium">Tickets de suporte</h2>
+              <h6 class="text-light m-b-0">
+                Total em aberto <strong><%= @users.count %></strong>
+              </h6>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">  
+  <div class="col-lg-8 col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <%= line_chart User.group_by_day(:created_at).count %>
       </div>
     </div>
   </div>

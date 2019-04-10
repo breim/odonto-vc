@@ -47,6 +47,9 @@ gem 'will_paginate-bootstrap4'
 gem 'addressable'
 # Payment method
 gem 'pagarme'
+# Graphs
+gem 'chartkick'
+gem 'groupdate'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -60,6 +63,7 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-mocks'
   gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :development do

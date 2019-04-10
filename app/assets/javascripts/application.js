@@ -9,6 +9,9 @@
 //= require vendors/jquery.datetimepicker
 //= require vendors/webcam
 
+//= require Chart.bundle
+//= require chartkick
+
 //= require themes/mintone/bootstrap.js
 //= require themes/mintone/modal-fix.js
 //= require themes/mintone/popper.min

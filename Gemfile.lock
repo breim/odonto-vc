@@ -78,6 +78,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chartkick (3.0.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (2.1.0)
@@ -120,6 +121,8 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     fakeweb (1.3.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
@@ -128,6 +131,8 @@ GEM
       thor (~> 0.14)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.1)
+      activesupport (>= 4.2)
     hashie (3.6.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -369,14 +374,17 @@ DEPENDENCIES
   brdinheiro
   byebug
   capybara (>= 2.15)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner
   devise
   draper
   factory_girl_rails
+  faker
   fakeweb
   figaro
+  groupdate
   jasmine-rails
   jbuilder (~> 2.5)
   jquery-rails

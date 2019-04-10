@@ -18,7 +18,7 @@ module Dentist
 
     # Brazilian datetime and lang
     config.time_zone = 'Brasilia'
-    config.active_record.default_timezone = :local
+    config.active_record.default_timezone = :utc
     config.i18n.default_locale = :'pt-BR'
 
     # Field with errors at validation
