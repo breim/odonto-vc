@@ -30,9 +30,14 @@
             <i class="fa fa-file-text-o"></i><span class="hide-menu">Atestados</span>
           <% end %>
         </li>
-        <li class="<%= current_link_helper('templates') %>">
-          <%= link_to dashboard_plans_path do %>
+        <li class="<%= current_link_helper('finances') %>">
+          <%= link_to root_path do %>
             <i class="fa fa-list-alt"></i><span class="hide-menu">Reciboos</span>
+          <% end %>
+        </li>
+        <li class="<%= current_link_helper('plans') %>">
+          <%= link_to dashboard_plans_path do %>
+            <i class="fa fa-credit-card"></i><span class="hide-menu">Assinatura</span>
           <% end %>
         </li>
       </ul>
