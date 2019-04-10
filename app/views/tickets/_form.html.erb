@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="ticketTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ticketLongTitle">Ticket de suporte</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for Ticket.new, remote: true do |f| %>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group required">
+              <%= f.label :name, "Nome" %>
+              <%= f.text_field :name, value: current_user.try(:name), autofocus: true, class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group required">
+              <%= f.label :phone, "Telefone" %>
+              <%= f.text_field :phone, value: current_user.try(:celphone), class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group required">
+              <%= f.label :email, "E-mail" %>
+              <%= f.text_field :email, value: current_user.try(:email), class: 'form-control', required: true %>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group required">
+              <%= f.label :description, "Em que podemos te ajudar ?" %>
+              <%= f.text_area :description, class: 'form-control', required: true  %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <%= f.hidden_field :user_id, value: current_user.try(:id) %>
+          <%= f.submit "Solicitar suporte", class: 'btn btn-submit' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
