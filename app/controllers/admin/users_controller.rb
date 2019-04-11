@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Extend module
 module Admin
   # Controller
@@ -7,6 +9,7 @@ module Admin
     respond_to :html
 
     def index
+      params[:page] = 1 unless params[:page].present?
       @users = if params[:search].present?
                  User.search(params[:search]).paginate(page: params[:page])
                else
@@ -16,14 +19,20 @@ module Admin
     end
 
     def show
-      respond_with(@user)
+      if params[:login_as_user].present?
+        sign_in(:user, @user)
+        redirect_to dashboard_calendars_path
+      else
+        respond_with(@user, location: admin_users_path)
+      end
     end
 
     def edit; end
 
     def update
+      params[:user].delete('password') if params[:user]['password'].blank?
       @user.update(user_params)
-      respond_with(@user)
+      respond_with(@user, location: admin_users_path, notice: 'Updated')
     end
 
     def destroy; end
@@ -35,8 +44,7 @@ module Admin
     end
 
     def user_params
-      params.require(:user).permit(:name, :last_name, :cpf, :celphone, :email,
-                                   :cro, :address, :admin, :plan_id, :plan_date, :blocked)
+      params.require(:user).permit(:name, :email, :password, :admin, :disabled)
     end
   end
 end

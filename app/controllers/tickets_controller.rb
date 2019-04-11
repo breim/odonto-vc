@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Controller
 class TicketsController < ApplicationController
   respond_to :html, :js

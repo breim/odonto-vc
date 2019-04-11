@@ -1,44 +1,49 @@
-<h2 class="dashboard-title">Usuários</h2>
-<hr/>
-
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-lg-5 col-md-3 col-sm-4">
+    <h3>Usuários</h3>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-5">
     <%= form_tag(admin_users_path, class: 'row', method: :get) do %>
-    <div class="col-12 col-sm pr-sm-0">
-      <%= text_field_tag :search, params[:search], placeholder: 'Name, email, cpf', class: 'form-control' %>
+    <div class="zcol-12 col-sm pr-sm-0">
+      <%= text_field_tag :search, params[:search], placeholder: 'Nome, CPF ou Celular', class: 'form-control' %>
     </div>
     <div class="col-12 col-sm-auto pl-sm-0">
-      <%= submit_tag 'Search', class: 'btn btn-primary btn-block' %>
+      <%= button_tag(type: 'submit', class: 'btn btn-primary btn-block') do %>
+        <i class='fa fa-search'></i>
+      <% end %>
     </div>
     <% end %>
   </div>
 </div>
-<br/>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Lastname</th> 
-      <th>CPF</th>
-      <th>Email</th>
-      <th>Celphone</th>
-      <th></th>
-    </tr>
-  </thead>
-  <% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %></td>
-    <td><%= user.name %></td>
-    <td><%= user.last_name %></td> 
-    <td><%# user.cpf %></td>
-    <td><%= user.email %></td>
-    <td><%# user.celphone %></td>
-    <td><%= link_to "Editar", edit_admin_user_path(user.id) %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="row">  
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>CPF</th>
+              <th>Email</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.id, admin_user_path(user.id) %></td>
+            <td><%= link_to user.name, admin_user_path(user.id) %></td>
+            <td><%=  %></td>
+            <td><%= user.email %></td>
+            <td><%= link_to "Editar", edit_admin_user_path(user.id) %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= render 'shared/paginate', collection: @customers %>
-
