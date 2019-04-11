@@ -16,23 +16,26 @@
           <% end %>
         </li>
         <li class="<%= current_link_helper('customers') %>">
-          <%= link_to dashboard_customers_path do %>
-            <i class="fa fa-user-circle"></i><span class="hide-menu">Pacientes</span>
+          <%= link_to admin_users_path do %>
+            <i class="fa fa-users"></i><span class="hide-menu">Usuários</span>
           <% end %>
         </li>
         <li class="<%= current_link_helper('finances') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-circle fa-usd"></i><span class="hide-menu">Financeiro</span>
-          <% end %>
-        </li>
-        <li class="<%= current_link_helper('templates') %>">
-          <%= link_to root_path do %>
-            <i class="fa fa-file-text-o"></i><span class="hide-menu">Atestados</span>
+            <i class="fa fa-circle fa-usd"></i><span class="hide-menu">Pagamentos</span>
           <% end %>
         </li>
         <li class="<%= current_link_helper('finances') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-list-alt"></i><span class="hide-menu">Recibos</span>
+            <i class="fa fa-paper-plane-o"></i><span class="hide-menu">Mensagens</span>
+          <% end %>
+        </li>
+        <li>
+          <br/>
+        </li>
+        <li class="<%= current_link_helper('finances') %>">
+          <%= link_to dashboard_calendars_path do %>
+            <i class="fa fa-sign-out"></i><span class="hide-menu">Ir para o sistema</span>
           <% end %>
         </li>
       </ul>
