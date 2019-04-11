@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_144413) do
+ActiveRecord::Schema.define(version: 2019_04_11_153909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,17 @@ ActiveRecord::Schema.define(version: 2019_04_10_144413) do
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
+  create_table "plan_payments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "pagarme_transaction_id"
+    t.string "card_brand"
+    t.string "card_last_digits"
+    t.decimal "price", precision: 14, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_plan_payments_on_user_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -111,6 +122,12 @@ ActiveRecord::Schema.define(version: 2019_04_10_144413) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "admin", default: false
+    t.boolean "plan_status", default: false
+    t.date "plan_date"
+    t.string "card_hash"
+    t.string "card_brand"
+    t.string "card_last_digits"
+    t.string "card_expiration"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -119,5 +136,6 @@ ActiveRecord::Schema.define(version: 2019_04_10_144413) do
   add_foreign_key "consultations", "customers"
   add_foreign_key "consultations", "users"
   add_foreign_key "customers", "users"
+  add_foreign_key "plan_payments", "users"
   add_foreign_key "tickets", "users"
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Extend module
 module Admin
   # Controller
