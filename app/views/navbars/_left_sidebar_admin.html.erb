@@ -25,9 +25,14 @@
             <i class="fa fa-circle fa-usd"></i><span class="hide-menu">Pagamentos</span>
           <% end %>
         </li>
+        <li class="<%= current_link_helper('tickets') %>">
+          <%= link_to admin_tickets_path do %>
+            <i class="fa fa-envelope-o"></i><span class="hide-menu">Suporte</span>
+          <% end %>
+        </li>
         <li class="<%= current_link_helper('finances') %>">
           <%= link_to root_path do %>
-            <i class="fa fa-paper-plane-o"></i><span class="hide-menu">Mensagens</span>
+            <i class="fa fa-paper-plane-o"></i><span class="hide-menu">SMS</span>
           <% end %>
         </li>
         <li>

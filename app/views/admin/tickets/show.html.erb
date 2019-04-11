@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="float-right">
+      <%= link_to "<i class='fa fa-reply'></i> Voltar".html_safe, :back, class: 'btn btn-rounded waves-effect waves-light btn-outline-default float-right' %>
+    </div>
+    <h3>Suporte</h3>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group">
+          <strong>Ticket ID:</strong>
+          <%= @ticket.id %>
+        </div>
+
+        <div class="form-group">
+          <strong>Nome:</strong>
+          <%= @ticket.name %>
+        </div>
+
+        <div class="form-group">
+          <strong>Telefone:</strong>
+          <%= @ticket.phone %>
+        </div>
+
+        <div class="form-group">
+          <strong>Email:</strong>
+          <%= @ticket.email %>
+        </div>
+
+        <div class="form-group">
+          <strong>Usuário:</strong>
+          <%= link_to "Ver usuário", admin_user_path(@ticket.user.id) if @ticket.user.present? %>
+        </div>
+
+        <div class="form-group">
+          <strong>Descrição:</strong>
+          <%= raw @ticket.description.to_s %>
+        </div>
+
+        <%= link_to "Solucionar ticket", admin_ticket_path(@ticket, ticket: {solved: true}), method: :put, class: 'btn btn-outline-primary btn-lg', data: { confirm: "Você tem certeza?" }   %>
+      </div>
+    </div>
+  </div>
+</div>
+

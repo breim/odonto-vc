@@ -47,7 +47,7 @@
             <div style="display:inline;width:70px;height:70px;">
               <canvas width="70" height="70"></canvas>
             </div>
-              <i class="fa fa-ticket fa-2x"></i> 
+              <i class="fa fa-envelope-o fa-2x"></i> 
             </div>
             <div class="align-slef-center mr-auto">
               <h2 class="m-b-0 text-uppercase font-18 font-medium">Tickets de suporte</h2>
@@ -66,7 +66,7 @@
     <div class="card">
       <div class="card-body">
         <h2 class="m-b-0 text-uppercase font-18 font-medium">
-          <i class="fa fa-paper-plane-o" style="color: #67b72c;"></i> Mensagens enviadas
+          <i class="fa fa-envelope-o" style="color: #67b72c;"></i> SMS
         </h2>
         <br/>
         <%= area_chart User.group_by_day(:created_at).count, colors: ['#7ad835'] %>
