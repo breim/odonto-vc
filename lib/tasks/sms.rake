@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: true.
-
 task sms: :environment do
   loop do
     sleep 600
