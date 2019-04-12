@@ -20,3 +20,26 @@
 .feature-off{
   color: #C1C3C6;
 }
+
+.payment-details-container.with-expiry {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
+.payment-details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #F8F8F8;
+  border: 1px solid #DCDCDC;
+  padding: 16px 19px;
+  text-align: left;
+}
+
+.icon-provider.mc, .icon-provider {
+  width: 50px;
+}

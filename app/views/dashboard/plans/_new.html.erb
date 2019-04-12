@@ -1,0 +1,55 @@
+<div class="row">  
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="">Gratuito</h3>
+        <h4 class="comparison">R$ 0,00<small> / mês</small></h4> 
+        <hr/>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Agenda</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Prontuário</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Controle financeiro</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Atestados e recibos</li>
+          <li class="list-group-item feature-off"><i class="fa fa-check" aria-hidden="true"></i> Cobrança automatizada</li>
+          <li class="list-group-item feature-off"><i class="fa fa-check" aria-hidden="true"></i> SMS de Lembrete</li>
+          <li class="list-group-item feature-off"><i class="fa fa-check" aria-hidden="true"></i> SMS Marketing</li>
+        </ul>
+        <hr/>
+        <button type="button" class="btn waves-effect waves-light btn-lg btn-rounded btn-primary w-100 disabled">PLANO ATUAL</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="">Premium</h3>
+        <h4 class="comparison">R$ 69,90<small> / mês</small></h4>
+        <hr/>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Agenda</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Prontuário</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Controle financeiro</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Atestados e recibos</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> Cobrança automatizada</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> SMS de Lembrete</li>
+          <li class="list-group-item"><i class="fa fa-check" aria-hidden="true"></i> SMS Marketing</li>
+        </ul>
+        <hr/>
+        <%= form_tag dashboard_plans_path, method: 'post' do %>
+          <script type="text/javascript"
+            src="https://assets.pagar.me/checkout/checkout.js"
+            data-button-class="btn waves-effect waves-light btn-lg btn-rounded btn-primary w-100"
+            data-button-text="SEJA PREMIUM"
+            data-encryption-key="<%= ENV['pagarme_encript_key'] %>"
+            data-amount="<%= ENV['plan_price'] %>"
+            data-payment-methods="credit_card"
+            data-customer-data="false"
+            data-postback-url="<%= dashboard_plans_url %>"
+            data-create-token="false">
+          </script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

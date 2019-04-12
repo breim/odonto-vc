@@ -23,5 +23,10 @@ module Dashboard
         respond_with(current_user, location: dashboard_plans_path)
       end
     end
+
+    def destroy
+      current_user.update(plan_status: false)
+      respond_with(current_user, location: dashboard_plans_path, notice: 'Plano cancelado com sucesso')
+    end
   end
 end
