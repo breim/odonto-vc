@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_04_11_153909) do
     t.boolean "admin", default: false
     t.boolean "plan_status", default: false
     t.date "plan_date"
-    t.string "card_hash"
+    t.string "card_id"
     t.string "card_brand"
     t.string "card_last_digits"
     t.string "card_expiration"
