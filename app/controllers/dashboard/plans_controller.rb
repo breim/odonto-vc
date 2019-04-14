@@ -9,8 +9,8 @@ module Dashboard
     def create
       @transaction = PlanPayment.bill_card(params[:pagarme][:card_hash])
 
-      if @transaction.status == 'paid'
-        current_user.update(card_hash: params[:pagarme][:card_hash], card_brand: @transaction.card.brand, card_last_digits: @transaction.card.last_digits,
+      if @transaction.status == 'paid'  
+        current_user.update(card_id: @transaction.card.id, card_brand: @transaction.card.brand, card_last_digits: @transaction.card.last_digits,
                             card_expiration: @transaction.card.expiration_date, plan_date: Date.today, plan_status: true)
 
         PlanPayment.create(user_id: current_user.id, pagarme_transaction_id: @transaction.id, card_brand: @transaction.card.brand,
