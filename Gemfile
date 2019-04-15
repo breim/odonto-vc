@@ -32,8 +32,6 @@ gem 'simple_form'
 gem 'active_model_serializers'
 # Decorators
 gem 'draper'
-# Cop the code
-gem 'rubocop'
 # multi-search in database
 gem 'pg_search'
 # Paperclip
@@ -66,6 +64,7 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-mocks'
   gem 'rspec-rails'
+  gem 'rubocop'
 end
 
 group :development do

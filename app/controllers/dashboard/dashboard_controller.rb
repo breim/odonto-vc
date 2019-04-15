@@ -13,6 +13,7 @@ module Dashboard
 
     def disabled_or_blocked_user
       return false unless current_user.disabled?
+
       sign_out current_user
       flash[:error] = 'Sua conta foi desabilitada.'
       redirect_to root_path
