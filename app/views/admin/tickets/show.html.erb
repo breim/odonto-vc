@@ -38,7 +38,7 @@
 
         <div class="form-group">
           <strong>Descrição:</strong>
-          <%= raw @ticket.description.to_s %>
+          <%= @ticket.description %>
         </div>
 
         <%= link_to "Solucionar ticket", admin_ticket_path(@ticket, ticket: {solved: true}), method: :put, class: 'btn btn-outline-primary btn-lg', data: { confirm: "Você tem certeza?" }   %>
