@@ -2,7 +2,7 @@
 
 namespace :plans do
   task renew: :environment do
-    @users = User.where(plan_status: true, plan_date: Date.today-1.month)
+    @users = User.where(plan_status: true, plan_date: Date.today - 1.month)
 
     next if @users.empty?
 
