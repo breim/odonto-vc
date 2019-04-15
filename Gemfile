@@ -69,6 +69,8 @@ group :development, :test do
 end
 
 group :development do
+  # Security test
+  gem 'brakeman'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
@@ -78,16 +80,10 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
   gem 'fakeweb'
-  gem 'launchy'
-  gem 'poltergeist'
+  gem 'database_cleaner'
   gem 'shoulda'
-  gem 'zonebie'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end

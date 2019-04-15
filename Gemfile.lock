@@ -53,14 +53,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    archive-zip (0.11.0)
-      io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.4.0)
       msgpack (~> 1.0)
+    brakeman (4.5.0)
     brdinheiro (3.3.0)
       actionpack (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -81,12 +80,8 @@ GEM
     chartkick (3.0.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (2.1.0)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
     chronic (0.10.2)
     climate_control (0.2.0)
-    cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.2)
@@ -139,7 +134,6 @@ GEM
       domain_name (~> 0.5)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
-    io-like (0.3.0)
     jaro_winkler (1.5.2)
     jasmine-core (2.99.2)
     jasmine-rails (0.14.8)
@@ -156,8 +150,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jsonapi-renderer (0.2.0)
     jwt (2.1.0)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -217,10 +209,6 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
     phantomjs (2.1.1.0)
-    poltergeist (1.18.1)
-      capybara (>= 2.1, < 4)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -365,7 +353,6 @@ GEM
       will_paginate (~> 3.0, >= 3.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zonebie (0.6.1)
 
 PLATFORMS
   ruby
@@ -374,11 +361,11 @@ DEPENDENCIES
   active_model_serializers
   addressable
   bootsnap (>= 1.1.0)
+  brakeman
   brdinheiro
   byebug
-  capybara (>= 2.15)
+  capybara
   chartkick
-  chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner
   devise
@@ -391,7 +378,6 @@ DEPENDENCIES
   jasmine-rails
   jbuilder (~> 2.5)
   jquery-rails
-  launchy
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-facebook
@@ -399,7 +385,6 @@ DEPENDENCIES
   paperclip (= 5.2.0)
   pg (>= 0.18, < 2.0)
   pg_search
-  poltergeist
   pry
   puma (~> 3.11)
   rails (~> 5.2.2)
@@ -420,7 +405,6 @@ DEPENDENCIES
   whenever
   will_paginate (~> 3.1.0)
   will_paginate-bootstrap4
-  zonebie
 
 BUNDLED WITH
    1.17.2
