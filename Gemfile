@@ -80,10 +80,10 @@ group :development do
 end
 
 group :test do
-  gem 'fakeweb'
-  gem 'database_cleaner'
-  gem 'shoulda'
-  gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'fakeweb'
   gem 'selenium-webdriver'
+  gem 'shoulda'
 end
