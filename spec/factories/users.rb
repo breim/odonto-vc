@@ -3,17 +3,18 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :user do |f|
-    f.email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
-    f.password { Faker::Internet.password }
-    f.token { SecureRandom.hex(16) }
-    f.disabled { false }
+  factory :user do
+    name { Faker::Name.name }
+    email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
+    password { Faker::Internet.password }
+    token { SecureRandom.hex(16) }
+    disabled { false }
   end
 
   factory :user_desactived, class: User do |f|
-    f.email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
-    f.password { Faker::Internet.password }
-    f.token { SecureRandom.hex(16) }
-    f.disabled { true }
+    email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
+    password { Faker::Internet.password }
+    token { SecureRandom.hex(16) }
+    disabled { true }
   end
 end
