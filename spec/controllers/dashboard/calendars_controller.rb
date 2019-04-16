@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe Dashboard::CalendarsController, type: :controller do
-
   let(:user) { FactoryBot.create(:user) }
 
   describe 'GET #index' do

@@ -11,7 +11,7 @@ FactoryBot.define do
     disabled { false }
   end
 
-  factory :user_desactived, class: User do |f|
+  factory :user_desactived, class: User do |_f|
     email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
     password { Faker::Internet.password }
     token { SecureRandom.hex(16) }
