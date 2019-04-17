@@ -404,6 +404,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda
+  shoulda-matchers
   simple_form
   simplecov
   spring
