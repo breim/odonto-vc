@@ -6,6 +6,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
+  has_many :customers
+  has_many :consultations
+  has_many :tickets
+  has_many :plan_payments
+
   before_create :build_token
 
   validates :name, presence: true
