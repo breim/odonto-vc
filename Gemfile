@@ -61,6 +61,7 @@ group :development, :test do
   gem 'jasmine-rails'
   gem 'pry'
   gem 'rspec-collection_matchers'
+  gem 'rails-controller-testing'
   gem 'rspec-its'
   gem 'rspec-mocks'
   gem 'rspec-rails'
