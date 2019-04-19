@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { create(:user) }
-  let(:facebook_provider) { create :oauth_provider, name: 'facebook' }
+  let(:facebook_provider) { build_stubbed :facebook_provider }
 
   describe 'associations' do
     it { is_expected.to have_many :customers }
@@ -16,9 +16,15 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
     
-    it 'test build token' do
-      user_1 = User.new
-      expect(user_1.build_token).to eq user_1.token
+    it 'when create user generate oauth token' do
+      user = build(:user)
+      expect(user.build_token).to eq user.token
+    end
+
+    it 'when user login with facebook #from_omniauth' do
+     # a = build_stubbed(:facebook_provider)
+     # puts a.inspect
+     # puts "============="
     end
   end
 end

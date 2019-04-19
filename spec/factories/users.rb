@@ -11,10 +11,15 @@ FactoryBot.define do
     disabled { false }
   end
 
-  factory :user_desactived, class: User do |_f|
-    email { Faker::Internet.free_email + SecureRandom.hex(4).to_s }
-    password { Faker::Internet.password }
-    token { SecureRandom.hex(16) }
-    disabled { true }
+  factory :facebook_provider do
+    provider { 'facebook' }
+    uid { '102020' }
+    info {
+      email { Faker::Internet.free_email }
+      name { Faker::Name.name }
+      first_name { Faker::Name.name }
+      last_name { Faker::Name.name }
+      image { Faker::Avatar.image }
+    }
   end
 end
