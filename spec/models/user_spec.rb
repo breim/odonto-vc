@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user) }
-
   describe 'associations' do
     it { is_expected.to have_many :customers }
     it { is_expected.to have_many :consultations }
