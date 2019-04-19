@@ -13,9 +13,16 @@ RSpec.describe Customer, type: :model do
   end
 
   describe 'self methods' do
-    it 'save only digits when save CPF' do
-      customer = build(:customer, cpf: '999.999.999-99')
-      expect(customer.build_cpf).to eq('99999999999')
+    context 'CPF validation' do
+      it 'save only digits when save CPF' do
+        customer = build(:customer, cpf: '999.999.999-99')
+        expect(customer.build_cpf).to eq('99999999999')
+      end
+
+      it 'when user dont fill cpf return nil' do
+        customer = build(:customer, cpf: '')
+        expect(customer.build_cpf).to eq(nil)
+      end
     end
   end
 end
