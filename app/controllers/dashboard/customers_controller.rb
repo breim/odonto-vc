@@ -9,7 +9,6 @@ module Dashboard
     respond_to :html, :js, :json
 
     def index
-      params[:page] = 1 unless params[:page].present?
       @customers = if params[:search].present?
                      Customer.joins(:user).where(user_id: current_user.id, deleted: false).search(params[:search])
                              .paginate(page: params[:page]).decorate
