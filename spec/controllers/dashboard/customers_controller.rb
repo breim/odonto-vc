@@ -22,4 +22,11 @@ RSpec.describe Dashboard::CustomersController, type: :controller do
       expect(assigns(:customers)).to include(customer)
     end
   end
+
+  describe 'GET #new' do
+    it 'new customer' do
+      get :new, xhr: true
+      expect(response.content_type).to eq 'text/javascript'
+    end
+  end
 end
