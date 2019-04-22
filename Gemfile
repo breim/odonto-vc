@@ -66,7 +66,6 @@ group :development, :test do
   gem 'rspec-its'
   gem 'rspec-mocks'
   gem 'rspec-rails'
-  gem 'rspec-retry'
   gem 'rubocop'
 end
 
