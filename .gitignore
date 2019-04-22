@@ -32,3 +32,6 @@
 # Ignore images uploaded in development env
 /public/images/**/**
 
+# Ignore coverage folder
+/coverage
+
