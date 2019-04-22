@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'coveralls'
+Coveralls.wear!
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'support/factory_bot.rb'
@@ -13,6 +15,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 Dir[Rails.root.join('spec/controllers/**/*.rb')].each { |f| require f }
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+
 
 # Shoulda matchers load
 Shoulda::Matchers.configure do |config|
