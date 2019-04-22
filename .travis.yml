@@ -1,0 +1,25 @@
+rvm:
+  - 2.6.0
+
+before_install:
+  - "gem install bundler"
+addons:
+  postgresql: "10"
+
+node_js:
+  - "0.10"
+
+before_script:
+  - "cp config/application.example.yml config/application.yml"
+  - psql -c 'create database dentist_test;' -U postgres
+  - "bundle exec rake db:migrate"
+
+env:
+  - DISPLAY=:99.0
+
+script:
+  - "bundle exec rspec spec"
+
+branches:
+  only:
+    - master
