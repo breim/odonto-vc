@@ -84,7 +84,6 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'fakeweb'
   gem 'selenium-webdriver'
   gem 'shoulda'
   gem 'shoulda-matchers'
