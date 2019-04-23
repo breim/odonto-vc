@@ -17,7 +17,6 @@ Dir[Rails.root.join('spec/controllers/**/*.rb')].each { |f| require f }
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-
 # Shoulda matchers load
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
