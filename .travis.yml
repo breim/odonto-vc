@@ -1,3 +1,8 @@
+env:
+  - DISPLAY=:99.0
+  global:
+    - CC_TEST_REPORTER_ID=8fe84f9c7fbe484644b3302c5a0e50786a8449b386b005d1bc68db972c4905cf
+
 rvm:
   - 2.6.0
 
@@ -22,11 +27,6 @@ before_script:
   - "cp config/application.example.yml config/application.yml"
   - psql -c 'create database travis_ci_test;' -U postgres
   - "bundle exec rake db:migrate"
-
-env:
-  - DISPLAY=:99.0
-  global:
-    - CC_TEST_REPORTER_ID=8fe84f9c7fbe484644b3302c5a0e50786a8449b386b005d1bc68db972c4905cf
 
 script:
   - "bundle exec rspec spec"
