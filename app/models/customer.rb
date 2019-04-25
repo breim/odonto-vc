@@ -40,10 +40,6 @@ class Customer < ApplicationRecord
     ENV['AWS_CDN_URL'].to_s + '/missing_customer.png'
   end
 
-  def image_path(style)
-    ENV['AWS_CDN_URL'].to_s + image(style.to_sym).split('/images/').last
-  end
-
   protected
 
   def decode_base64_image
