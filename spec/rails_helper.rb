@@ -3,17 +3,13 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'support/factory_bot.rb'
-require 'support/factory_bot.rb'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
-include ActionDispatch::TestProcess
-
 require 'simplecov'
 SimpleCov.start
-
 
 # Load external paths
 Dir[Rails.root.join('spec/controllers/**/*.rb')].each { |f| require f }
@@ -52,6 +48,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # Add action dispatch to file upload
+  # config.include ActionDispatch::TestProcess
   # Devise helpers
   config.include Devise::Test::ControllerHelpers, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

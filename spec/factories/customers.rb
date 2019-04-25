@@ -19,7 +19,7 @@ FactoryBot.define do
     city { Faker::Address.city }
     complement { Faker::Address.secondary_address }
     cpf { Faker::IDNumber.brazilian_citizen_number }
-    image { fixture_file_upload(Rails.root.join('public', 'missing_customer.png'), 'image/png') }
+    image { Rack::Test::UploadedFile.new(Rails.root.join('public', 'missing_customer.png'), 'image/png') }
     user
   end
 end

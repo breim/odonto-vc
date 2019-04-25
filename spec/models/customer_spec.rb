@@ -13,7 +13,6 @@ RSpec.describe Customer, type: :model do
   end
 
   describe 'methods' do
-
     context 'customer images' do
       it 'when customer dont have image #set_default_url' do
         customer = create(:customer, image: nil)

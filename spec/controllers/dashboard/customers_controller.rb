@@ -33,7 +33,7 @@ RSpec.describe Dashboard::CustomersController, type: :controller do
 
   describe 'GET #edit' do
     it 'edit customer render view' do
-      get :edit, params: {id: customer.id }, xhr: true
+      get :edit, params: { id: customer.id }, xhr: true
       expect(response.content_type).to eq 'text/javascript'
     end
   end
