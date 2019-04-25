@@ -33,7 +33,7 @@ gem 'active_model_serializers'
 # Decorators
 gem 'draper'
 # multi-search in database
-gem 'pg_search'
+gem 'pg_search', '2.1.4'
 # Paperclip
 gem 'paperclip', '5.2.0'
 # BRL Money
@@ -52,7 +52,6 @@ gem 'groupdate'
 gem 'whenever', require: false
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'coveralls', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -82,7 +81,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda'
