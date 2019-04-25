@@ -9,6 +9,12 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
+include ActionDispatch::TestProcess
+
+require 'simplecov'
+SimpleCov.start
+
+
 # Load external paths
 Dir[Rails.root.join('spec/controllers/**/*.rb')].each { |f| require f }
 require 'rspec/rails'

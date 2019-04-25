@@ -12,7 +12,14 @@ RSpec.describe Customer, type: :model do
     it { should validate_presence_of(:name) }
   end
 
-  describe 'self methods' do
+  describe 'methods' do
+
+    context 'customer images' do
+      it '#set_default_url' do
+        customer = create(:customer)
+      end
+    end
+
     context 'CPF validation' do
       it 'save only digits when save CPF' do
         customer = build(:customer, cpf: '999.999.999-99')
