@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe Dashboard::CustomersController, type: :controller do
   let(:user) { create(:user) }
   let(:customers) { create_list(:customer, 5, user_id: user.id) }
+  let(:customer) { create(:customer, user_id: user.id) }
 
   before do
     sign_in user
@@ -24,8 +25,15 @@ RSpec.describe Dashboard::CustomersController, type: :controller do
   end
 
   describe 'GET #new' do
-    it 'new customer' do
+    it 'new customer render view' do
       get :new, xhr: true
+      expect(response.content_type).to eq 'text/javascript'
+    end
+  end
+
+  describe 'GET #edit' do
+    it 'edit customer render view' do
+      get :edit, params: {id: customer.id }, xhr: true
       expect(response.content_type).to eq 'text/javascript'
     end
   end
