@@ -12,3 +12,18 @@ development:
   pagarme_api_key: ''
   pagarme_encript_key: ''
   plan_price: '6990'
+
+test:
+  db_username: '9191919191'
+  db_password: ''
+  facebok_app_id: '91919191919191'
+  facebook_app_secret: '9119199191911'
+  facebook_callback_url: 'http://localhost:3000/users/auth/facebook/callback'
+  paperclip_secret: 'jdsjdsajdsjdsjdsajdsaadsjdsj'
+  AWS_CDN_URL: 'http://localhost:3000'
+  sms_web_service: 'http://209.133.205.2/painel/api.ashx?action=sendsms'
+  loca_sms_number: '919191919191'
+  loca_sms_pass: '919191919'
+  pagarme_api_key: 'adsdsadsadsa'
+  pagarme_encript_key: 'dsdsadsadsa'
+  plan_price: '6990'
