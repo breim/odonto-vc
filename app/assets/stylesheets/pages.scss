@@ -1,3 +1,5 @@
+@import 'themes/mintone/fontawesome';
+
 /*!
  * Bootstrap v4.1.2 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -14726,6 +14728,10 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 14px;
   color: #969db4;
   margin: 0px 8px;
+}
+
+.f_social_icon_two a i:hover{
+  color: #fff;
 }
 
 /*================ footer area two css ==============*/
