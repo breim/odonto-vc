@@ -3,6 +3,15 @@
 require 'rails_helper'
 
 describe UserDecorator do
+
+  describe '#created_last_week' do
+
+    it 'total users created on last week' do
+      expect(UserDecorator.decorate(User.all).created_last_week).to eq(User.where('created_at >= ?', 1.week.ago.utc).count)
+    end
+  end
+
+
   describe '#image' do
     it 'when user has gravatar' do
       user = create(:user, uid: nil).decorate
