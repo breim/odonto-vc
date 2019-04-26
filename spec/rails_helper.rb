@@ -13,6 +13,7 @@ SimpleCov.start
 
 # Load external paths
 Dir[Rails.root.join('spec/controllers/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/decorators/*.rb')].each { |f| require f }
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
