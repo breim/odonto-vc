@@ -19,10 +19,6 @@ module Dashboard
       respond_with(@customers, location: dashboard_customers_path)
     end
 
-    def show
-      respond_with(@customer)
-    end
-
     def new
       @customer = Customer.new
       respond_with(@customer, location: dashboard_customers_path)
