@@ -56,4 +56,13 @@ RSpec.describe Dashboard::CustomersController, type: :controller do
       expect(assigns(:customer).name).to eq('Batman')
     end
   end
+
+  describe 'delete #destroy' do
+    let(:customer) { create(:customer) }
+
+    it 'create customer with success' do
+      delete :destroy, params: { id: customer.id }, xhr: true
+      expect(assigns(:customer).deleted).to eq(true)
+    end
+  end
 end
