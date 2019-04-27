@@ -10,7 +10,7 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.cell_phone }
     user_id { SecureRandom.hex(16) }
     gender { 'M' }
-    email { Faker::Internet.email }
+    email { "#{SecureRandom.hex(9)}@example.com" }
     code { '21123312' }
     zipcode { Faker::Address.zip }
     address { Faker::Address.street_address }
