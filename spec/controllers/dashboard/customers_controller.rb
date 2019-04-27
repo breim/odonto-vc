@@ -37,4 +37,23 @@ RSpec.describe Dashboard::CustomersController, type: :controller do
       expect(response.content_type).to eq 'text/javascript'
     end
   end
+
+  describe 'POST #create' do
+    let(:customer) { attributes_for(:customer) }
+
+    it 'create customer with success' do
+      post :create, params: { customer: customer }, xhr: true
+      expect(response.content_type).to eq 'text/javascript'
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe 'PATCH #update' do
+    let(:customer) { create(:customer) }
+
+    it 'create customer with success' do
+      patch :update, params: { id: customer.id, customer: { name: 'Batman' } }, xhr: true
+      expect(assigns(:customer).name).to eq('Batman')
+    end
+  end
 end
