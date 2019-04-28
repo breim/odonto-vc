@@ -58,6 +58,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'fakeweb'
   gem 'jasmine-rails'
   gem 'pry'
   gem 'rails-controller-testing'
@@ -67,6 +68,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
+  gem 'vcr'
 end
 
 group :development do
