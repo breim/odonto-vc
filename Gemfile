@@ -58,7 +58,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'fakeweb'
   gem 'jasmine-rails'
   gem 'pry'
   gem 'rails-controller-testing'
@@ -69,6 +68,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -83,6 +83,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'shoulda'
