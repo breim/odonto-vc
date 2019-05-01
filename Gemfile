@@ -67,6 +67,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'rubocop-performance'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

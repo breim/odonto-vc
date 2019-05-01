@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pagar.me/1/cards/card_cjva5883c072hsn6dwdeehjjb
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWtfdGVzdF9RYXFMVHJ4dkJUNXIxTUJpUlEwNGNOOXVBTldBeXc6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 04 May 2019 23:36:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '350'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"15e-0f3Qu22kHs4fcUSdwETcSsZu5p0"
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1557012993'
+      X-Response-Time:
+      - 15.230ms
+      X-Request-Id:
+      - ad309dc6-2813-4c8e-8bcf-1363d88babc0
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"card","id":"card_cjva5883c072hsn6dwdeehjjb","date_created":"2019-05-04T23:33:33.817Z","date_updated":"2019-05-04T23:33:34.117Z","brand":"mastercard","holder_name":"asdasd","first_digits":"539561","last_digits":"9322","country":"UNITED
+        STATES","fingerprint":"cjva54ox4754u0i13xo6cwfxw","customer":null,"valid":true,"expiration_date":"1199"}'
+    http_version: 
+  recorded_at: Sat, 04 May 2019 23:36:31 GMT
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":"6990","card":null,"payment_method":"credit_card","installments":1,"status":"local","card_id":"card_cjva5883c072hsn6dwdeehjjb","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '163'
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWtfdGVzdF9RYXFMVHJ4dkJUNXIxTUJpUlEwNGNOOXVBTldBeXc6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 04 May 2019 23:36:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1569'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"621-SKYUq9cKWjiN6IeXJSkvN+x6SS8"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2013-03-01'
+      X-Response-Time:
+      - 441.224ms
+      X-Request-Id:
+      - 9492386f-f0b9-4690-af3f-a8f99f5d5465
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"transaction","status":"paid","refuse_reason":null,"status_reason":"acquirer","acquirer_response_code":"00","acquirer_name":"development","acquirer_id":"554c6febac420bc346b6bf52","authorization_code":"674524","soft_descriptor":null,"tid":"6301969","nsu":null,"date_created":"2019-05-04T23:36:32.489Z","date_updated":"2019-05-04T23:36:32.773Z","amount":6990,"authorized_amount":6990,"paid_amount":6990,"refunded_amount":0,"installments":1,"id":6301969,"cost":154.85,"card_holder_name":"asdasd","card_last_digits":"9322","card_first_digits":"539561","card_brand":"mastercard","card_pin_mode":null,"card_magstripe_fallback":false,"postback_url":null,"payment_method":"credit_card","capture_method":"ecommerce","antifraud_score":null,"boleto_url":null,"boleto_barcode":null,"boleto_expiration_date":null,"referer":"api_key","ip":"186.231.159.145","subscription_id":null,"phone":null,"address":null,"customer":null,"billing":null,"shipping":null,"items":[],"card":{"object":"card","id":"card_cjva5883c072hsn6dwdeehjjb","date_created":"2019-05-04T23:33:33.817Z","date_updated":"2019-05-04T23:33:34.117Z","brand":"mastercard","holder_name":"asdasd","first_digits":"539561","last_digits":"9322","country":"UNITED
+        STATES","fingerprint":"cjva54ox4754u0i13xo6cwfxw","valid":true,"expiration_date":"1199"},"split_rules":null,"metadata":{},"antifraud_metadata":{},"reference_key":null,"device":null,"local_transaction_id":null,"local_time":null,"fraud_covered":false,"order_id":null,"risk_level":"unknown","receipt_url":null,"payment":null,"addition":null,"discount":null}'
+    http_version: 
+  recorded_at: Sat, 04 May 2019 23:36:33 GMT
+- request:
+    method: get
+    uri: https://api.pagar.me/1/cards/sasasad
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '2'
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWRzZHNhZHNhZHNhOng=
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sun, 05 May 2019 04:16:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"method":"get","url":"\/cards\/sasasad","code":401,"errors":[{"type":"environment_error","message":"Invalid
+        environment","parameter_name":null}]}
+
+'
+    http_version: 
+  recorded_at: Sun, 05 May 2019 04:16:36 GMT
+recorded_with: VCR 4.0.0

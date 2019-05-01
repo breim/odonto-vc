@@ -13,5 +13,7 @@ class PlanPayment < ApplicationRecord
                     PagarMe::Transaction.new(amount: ENV['plan_price'], card: PagarMe::Card.find_by_id(card_hash_or_id))
                   end
     transaction.charge
+  rescue StandardError
+    OpenStruct.new(status: false)
   end
 end

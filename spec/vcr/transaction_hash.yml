@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"amount":"6990","card_hash":"1558669_DINiVOiY85zQhLzCa6tqcz9WDVJzpg1YZL+Et3e1NaKb4Ra1MhYNmszpFoqBykfiF3E1DQ0+ymeIu44lYU+msLwBqPmhUBIc6ylP6gOQ6vO8/nhlP5Mv/oStk00HoPVr8S+UXKwirt27dQivHat2PMp+BcaEUTcTN8FlnOD/E13ZZKJRo2/tAOmp8hy5zn6waHOM2HbQF46sChFTewgNKTPfK9Mc8lIqhtaPWdTC3zVwzuw4wkD3r+Lx1J3bwO1cYkDGFses0fmraErh9qc39vpLEa4sAmbOHNrUInPyoj34JXkGGLMGizzA7NQlPXg1x2MDvzWHoxLi+kGwNXMvCA==","payment_method":"credit_card","installments":1,"status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '475'
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWtfdGVzdF9RYXFMVHJ4dkJUNXIxTUJpUlEwNGNOOXVBTldBeXc6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 05 May 2019 00:34:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1561'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Charset:
+      - utf-8
+      Etag:
+      - W/"619-V1S9J8suaRSaYgp0ePEJyPHDQFA"
+      Vary:
+      - X-HTTP-Method-Override
+      X-Pagarme-Version:
+      - '2013-03-01'
+      X-Response-Time:
+      - 410.569ms
+      X-Request-Id:
+      - 492f7bcc-71ad-44b1-9394-289c4c1e95bd
+      Strict-Transport-Security:
+      - max-age=300; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"object":"transaction","status":"paid","refuse_reason":null,"status_reason":"acquirer","acquirer_response_code":"00","acquirer_name":"development","acquirer_id":"554c6febac420bc346b6bf52","authorization_code":"333197","soft_descriptor":null,"tid":"6302057","nsu":null,"date_created":"2019-05-05T00:34:15.503Z","date_updated":"2019-05-05T00:34:15.772Z","amount":6990,"authorized_amount":6990,"paid_amount":6990,"refunded_amount":0,"installments":1,"id":6302057,"cost":154.85,"card_holder_name":"adsasd","card_last_digits":"8342","card_first_digits":"512471","card_brand":"mastercard","card_pin_mode":null,"card_magstripe_fallback":false,"postback_url":null,"payment_method":"credit_card","capture_method":"ecommerce","antifraud_score":null,"boleto_url":null,"boleto_barcode":null,"boleto_expiration_date":null,"referer":"api_key","ip":"186.231.159.145","subscription_id":null,"phone":null,"address":null,"customer":null,"billing":null,"shipping":null,"items":[],"card":{"object":"card","id":"card_cjva7ea0v077ksn6dkemmib5w","date_created":"2019-05-05T00:34:15.487Z","date_updated":"2019-05-05T00:34:15.832Z","brand":"mastercard","holder_name":"adsasd","first_digits":"512471","last_digits":"8342","country":"KENYA","fingerprint":"cjva7e9nc8cw80m18po20xq9j","valid":true,"expiration_date":"1199"},"split_rules":null,"metadata":{},"antifraud_metadata":{},"reference_key":null,"device":null,"local_transaction_id":null,"local_time":null,"fraud_covered":false,"order_id":null,"risk_level":"unknown","receipt_url":null,"payment":null,"addition":null,"discount":null}'
+    http_version: 
+  recorded_at: Sun, 05 May 2019 00:34:16 GMT
+recorded_with: VCR 4.0.0
