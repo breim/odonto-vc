@@ -19,13 +19,13 @@ RSpec.describe PlanPayment, type: :model do
     end
 
     it '#bill_card with card_hash' do
-      VCR.use_cassette('card_hash') do
+      VCR.use_cassette('plan_payment/card_hash') do
         expect(PlanPayment.bill_card(card_hash[:card_hash]).status).to eq('paid')
       end
     end
 
     it '#bill_card with transaction_hash' do
-      VCR.use_cassette('transaction_hash') do
+      VCR.use_cassette('plan_payment/transaction_hash') do
         expect(PlanPayment.bill_card(transaction_hash[:transaction_hash]).status).to eq('paid')
       end
     end

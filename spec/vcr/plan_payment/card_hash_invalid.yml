@@ -27,7 +27,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Mon, 06 May 2019 22:27:55 GMT
+      - Sun, 05 May 2019 04:35:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -53,17 +53,15 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '29'
       X-Ratelimit-Reset:
-      - '1557181677'
+      - '1557030919'
       X-Response-Time:
-      - 11.954ms
+      - 12.123ms
       Strict-Transport-Security:
       - max-age=300; includeSubDomains
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJlcnJvcnMiOlt7InR5cGUiOiJub3RfZm91bmQiLCJwYXJhbWV0ZXJfbmFt
-        ZSI6bnVsbCwibWVzc2FnZSI6IkNhcmQgbsOjbyBlbmNvbnRyYWRvIn1dLCJ1
-        cmwiOiIvY2FyZHMvc2FzYXNhZCIsIm1ldGhvZCI6ImdldCJ9
+        eyJlcnJvcnMiOlt7InR5cGUiOiJub3RfZm91bmQiLCJwYXJhbWV0ZXJfbmFtZSI6bnVsbCwibWVzc2FnZSI6IkNhcmQgbsOjbyBlbmNvbnRyYWRvIn1dLCJ1cmwiOiIvY2FyZHMvc2FzYXNhZCIsIm1ldGhvZCI6ImdldCJ9
     http_version: 
-  recorded_at: Wed, 01 May 2019 22:27:54 GMT
+  recorded_at: Sun, 05 May 2019 04:35:17 GMT
 recorded_with: VCR 4.0.0
