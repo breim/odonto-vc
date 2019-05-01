@@ -2,6 +2,7 @@
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'rspec/json_expectations'
 require 'support/factory_bot.rb'
 require 'vcr_config.rb'
 ENV['RAILS_ENV'] ||= 'test'

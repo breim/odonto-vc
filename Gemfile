@@ -63,6 +63,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-collection_matchers'
   gem 'rspec-its'
+  gem 'rspec-json_expectations'
   gem 'rspec-mocks'
   gem 'rspec-rails'
   gem 'rubocop'
