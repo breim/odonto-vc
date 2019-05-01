@@ -35,3 +35,6 @@
 # Ignore coverage folder
 /coverage
 
+# DS files on macOS
+.DS_Store
+
