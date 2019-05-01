@@ -7,8 +7,8 @@ class Consultation < ApplicationRecord
 
   def send_sms
     uri = build_url(customer, user, date, hour)
-    _response = Net::HTTP.get(uri)
     update(sms_date: Time.now, sms_sent: true)
+    _response = Net::HTTP.get(uri)
     # SmsLog.create(msg: msg, number: number, msg_callback: JSON.parse(response)["msg"], customer_id: @customer.id, user_id: @customer.user_id)
   end
 
