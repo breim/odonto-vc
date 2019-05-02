@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :consultations
   has_many :tickets
   has_many :plan_payments
+  has_many :attestations
 
   before_create :build_token
 

@@ -8,6 +8,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many :consultations }
     it { is_expected.to have_many :tickets }
     it { is_expected.to have_many :plan_payments }
+    it { is_expected.to have_many :attestations }
   end
 
   describe 'validations' do
