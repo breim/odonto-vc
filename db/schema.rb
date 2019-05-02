@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_153909) do
+ActiveRecord::Schema.define(version: 2019_05_01_235641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attestations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "work_or_study"
+    t.string "customer_name"
+    t.date "date"
+    t.string "hour"
+    t.string "fit_unfit"
+    t.string "observation"
+    t.boolean "disabled"
+    t.string "cro"
+    t.string "unfit_days"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_attestations_on_user_id"
+  end
 
   create_table "consultations", force: :cascade do |t|
     t.date "date"
@@ -111,6 +129,7 @@ ActiveRecord::Schema.define(version: 2019_04_11_153909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attestations", "users"
   add_foreign_key "consultations", "customers"
   add_foreign_key "consultations", "users"
   add_foreign_key "customers", "users"
