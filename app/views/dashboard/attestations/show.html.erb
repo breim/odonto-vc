@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+    <h3>Atestados</h3>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <a href='#' onclick="printDiv('printJS-form')" class="btn btn-outline-primary float-right" ><i class='fa fa-print'></i> Imprimir</a>
+          </div>
+        </div>
+        <div id="printJS-form">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="name">
+                <%= current_user.name %> <%= current_user.last_name %>
+              </div>
+              <div id="address">
+                <%= @attestation.address %>
+              </div>
+              <br/><br/><br/>
+              <div class="text text-center">
+                <h4>COMPROVANTE DE ATENDIMENTO ODONTOLÓGICO</h4>
+              </div>
+              <br/>
+              <p>
+                Atesto para fins <span id="work_or_study"><%= @attestation.work_or_study %></span> que o paciente <b><span id="customer_name"><%= @attestation.customer_name %></b></span> 
+                compareceu neste estabelecimento para tratamento odontológico na data <span id="date"><%= @attestation.date.try(:strftime, '%d/%m/%Y') %></span> ás <span id="hour"><%= @attestation.hour %></span> 
+                estando <span id="fit_unfit"><%= @attestation.fit_unfit %></span> para suas atividades.
+                <% if @attestation.fit_unfit == 'inapto' %>
+                  <div id="unfit">
+                    Permaner em repouso por <span id="unfit_days"><%= @attestation.unfit_days %></span> dia(s)
+                  </div>
+                <% end %>
+              </p>
+              <p>
+                Obs: <span id="observation"><%= simple_format @attestation.observation %></span>
+              </p> 
+              <br/><br/><br/><br/><br/><br/><br/><br/>
+              <div class="text text-center">
+                ________________________________________________________
+                <br/>
+                <span id="name"><%= current_user.name %></span> 
+                <span id="cro">CRO: <%= @attestation.cro %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

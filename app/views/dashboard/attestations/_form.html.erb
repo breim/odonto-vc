@@ -1,0 +1,108 @@
+<%= form_for([:dashboard, @attestation]) do |f| %>
+<%= render 'shared/error_messages', resource: @attestation %>
+
+<div class="form-inputs">
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group required">
+            <%= f.label :name, "Nome do dentista" %>
+            <%= f.text_field :name, value: "#{current_user.name} #{current_user.last_name}", class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group required">
+            <%= f.label :cro, "CRO" %>
+            <%= f.text_field :cro, value: current_user.try(:cro), class: 'form-control'  %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group required">
+        <%= f.label :address, "Endereço do consultório" %>
+        <%= f.text_field :address, value: current_user.try(:address), class: 'form-control' %>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group required">
+            <%= f.label :customer_name, "Nome do paciente" %>
+            <%= f.text_field :customer_name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group required">
+            <%= f.label :work_or_study, "Fins trabalhistas ou escolares" %>
+            <%= f.select(:work_or_study, [['Trabalhistas', 'trabalhistas'], ['Escolares', 'escolares']], { include_blank: true }, { class: 'form-control' } ) %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group required">
+            <%= f.label :date, "Data" %>
+            <%= f.text_field :date, value: @attestation.date.try(:strftime, '%d/%m/%Y'), class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group required">
+            <%= f.label :hora, "Hora" %>
+            <%= f.text_field :hour, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group required">
+            <%= f.label :fit_unfit, "Apto ou inapto" %>
+            <%= f.select(:fit_unfit, [['Apto', 'apto'], ['Inapto', 'inapto']], { include_blank: true }, { class: 'form-control' }) %>
+          </div>
+        </div>
+        <div class="col-sm-6 unfit">
+          <div class="form-group required">
+            <%= f.label :unfit_days, "Permaner em repouso por <xx> dias" %>
+            <%= f.text_field :unfit_days, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :observation, "Observação" %>
+        <%= f.text_area :observation, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <h4>Pré-Visualização</h4>
+      <div id="company"></div>
+      <div id="address">{{}}</div>
+      <div class="text text-center">
+        <h5>COMPROVANTE DE ATENDIMENTO ODONTOLÓGICO</h5>
+      </div>
+      <p>Atesto para fins <span id="work_or_study">{{}}</span> que o paciente <span id="customer_name">{{}}</span> 
+        compareceu neste estabelecimento para tratamento odontológico em <span id="date">{{}}</span> ás <span id="hour">{{}}</span> 
+        estando <span id="fit_unfit">{{}}</span> para suas atividades.
+        <div id="unfit">Permaner em repouso por <span id="unfit_days"></span> dia(s)</div>
+      </p>
+      <p>
+        Obs: <span id="observation"></span>
+      </p> 
+      <div class="text text-center">
+        ________________________________
+        <br/>
+        <span id="name"></span> 
+        CRO: <span id="cro">{{}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit class: 'btn btn-outline-primary btn-lg' %>
+</div>
+<% end %>
+
+<%= javascript_include_tag 'dashboard/attestations', defer: true %>

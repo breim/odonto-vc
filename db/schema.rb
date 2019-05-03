@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_235641) do
+ActiveRecord::Schema.define(version: 2019_05_03_023139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_01_235641) do
     t.string "hour"
     t.string "fit_unfit"
     t.string "observation"
-    t.boolean "disabled"
+    t.boolean "disabled", default: false
     t.string "cro"
     t.string "unfit_days"
     t.bigint "user_id"
@@ -125,6 +125,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_235641) do
     t.string "card_brand"
     t.string "card_last_digits"
     t.string "card_expiration"
+    t.string "cro"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

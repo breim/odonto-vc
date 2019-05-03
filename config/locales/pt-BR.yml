@@ -10,6 +10,7 @@ pt-BR:
     models:
       user: Usuário
       customer: Paciente
+      attestation: Atestado
     attributes:
       user:
         first_name: "Nome"

@@ -1,0 +1,50 @@
+<% unless @attestations.empty? %>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class=''>
+        <tr>
+          <th></th>
+          <th>Cliente</th>
+          <th>Fins</th>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Apto/Inapto</th>
+          <th>Dias inapto</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @attestations.each do |attestation| %>
+        <tr>
+          <td><%= attestation.id %></td>
+          <td><%= attestation.customer_name %></td>
+          <td><%= attestation.work_or_study %></td>
+          <td><%= attestation.date.try(:strftime, '%d/%m/%Y') %></td>
+          <td><%= attestation.hour %></td>
+          <td><%= attestation.fit_unfit %></td>
+          <td><%= attestation.unfit_days %></td>
+          <td><%= link_to 'Ver atestado', dashboard_attestation_path(attestation) %></td>
+          <td>
+            <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_dashboard_attestation_path(attestation), class: 'btn btn-sm btn-outline-primary' %>
+            <%= link_to "<i class='fa fa-trash'></i>".html_safe, dashboard_attestation_path(attestation), method: 'delete', data: { confirm: 'Você tem certeza ?' }, class: 'btn btn-sm btn-outline-danger' %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  </br>
+  <% if params[:search] %>
+    <div class="text-center">
+      <h5>Não encontramos pacientes de acordo com a busca</h5>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <h5>Você não tem atestados :/</h5>
+    </div>
+  <% end %>
+<% end %>
+
+
+<%= render 'shared/paginate', collection: @attestations %>
