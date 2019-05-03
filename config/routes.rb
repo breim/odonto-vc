@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :customers
     resources :consultations
     resources :plans
+    resources :attestations
     resources :calendars, only: %i[index] do
       get 'search', on: :collection
     end
