@@ -1,56 +1,68 @@
 # frozen_string_literal: true
 
-# Extend module
-module Dashboard
-  # Controller
-  class AttestationsController < Dashboard::DashboardController
-    before_action :set_attestation, only: %i[show edit update destroy]
+require 'rails_helper'
 
-    respond_to :html
+RSpec.describe Dashboard::AttestationsController, type: :controller do
+  let(:user) { create(:user) }
+  let(:attestations) { create_list(:attestation, 5, user_id: user.id) }
+  let(:customer) { create(:customer, user_id: user.id) }
 
-    def index
-      params[:page] = 1 unless params[:page].present?
-      @attestations = Attestation.where(user_id: current_user.id, disabled: false).order(created_at: :desc).offset((params[:page].to_i - 1) * 30).limit(30)
-      respond_with(:dashboard, @attestations)
+  before do
+    sign_in user
+  end
+
+  describe 'GET #index' do
+    it 'return some attestations' do
+      get :index
+      expect(assigns(:attestations)).to match_array(attestations)
     end
 
-    def show
-      respond_with(@attestation, location: dashboard_attestation_path(@attestation))
+    it 'search customer name' do
+      attestation = attestations.first
+      get :index, params: { search: attestation.customer_name }, xhr: true
+      expect(assigns(:attestations)).to include(attestation)
     end
+  end
 
-    def new
-      @attestation = Attestation.new
-      respond_with(:dashboard, @attestation)
+  describe 'GET #new' do
+    it 'new customer render view' do
+    #  get :new, xhr: true
+    #  expect(response.content_type).to eq 'text/javascript'
     end
+  end
 
-    def edit; end
-
-    def create
-      @attestation = Attestation.new(attestation_params)
-      @attestation.user_id = current_user.id
-      @attestation.save
-      respond_with(:dashboard, @attestation)
+  describe 'GET #edit' do
+    it 'edit customer render view' do
+    #  get :edit, params: { id: customer.id }, xhr: true
+    #  expect(response.content_type).to eq 'text/javascript'
     end
+  end
 
-    def update
-      @attestation.update(attestation_params)
-      respond_with(:dashboard, @attestation)
+  describe 'POST #create' do
+    let(:customer) { attributes_for(:customer) }
+
+    it 'create customer with success' do
+    #  post :create, params: { customer: customer }, xhr: true
+    #  expect(response.content_type).to eq 'text/javascript'
+    #  expect(response.status).to eq(200)
     end
+  end
 
-    def destroy
-      @attestation.update(disabled: true)
-      respond_with(@attestation, location: dashboard_attestations_path)
+  describe 'PATCH #update' do
+    let(:customer) { create(:customer) }
+
+    it 'create customer with success' do
+    #  patch :update, params: { id: customer.id, customer: { name: 'Batman' } }, xhr: true
+    #  expect(assigns(:customer).name).to eq('Batman')
     end
+  end
 
-    private
+  describe 'delete #destroy' do
+    let(:customer) { create(:customer) }
 
-    def set_attestation
-      @attestation = Attestation.find(params[:id])
-    end
-
-    def attestation_params
-      params.require(:attestation).permit(:name, :address, :work_or_study, :customer_id, :customer_name, :date, :hour,
-                                          :fit_unfit, :unfit_days, :observation, :cro, :company)
+    it 'create customer with success' do
+    #  delete :destroy, params: { id: customer.id }, xhr: true
+    #  expect(assigns(:customer).deleted).to eq(true)
     end
   end
 end
