@@ -7,7 +7,14 @@ module Dashboard
     respond_to :html, :flash
 
     def index
-      @attestations = Attestation.where(user_id: current_user.id, disabled: false).order(created_at: :desc).paginate(page: params[:page])
+      @attestations = if params[:search].present?
+                        Attestation.where(user_id: current_user.id, disabled: false).search(params[:search])
+                                   .paginate(page: params[:page])
+                      else
+                        Attestation.where(user_id: current_user.id, disabled: false).order(created_at: :desc)
+                                   .paginate(page: params[:page])                        
+                      end
+
       respond_with(:dashboard, @attestations)
     end
 

@@ -11,7 +11,7 @@ class Attestation < ApplicationRecord
   self.per_page = 15
 
   include PgSearch
-  pg_search_scope :search, against: %i[name],
+  pg_search_scope :search, against: %i[customer_name],
                            using: {
                              tsearch: { prefix: true }
                            }
