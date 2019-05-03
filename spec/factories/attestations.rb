@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :attestation do
-    name { "MyString" }
-    address { "MyString" }
-    work_or_study { "MyString" }
-    customer_name { "MyString" }
-    date { "2019-05-01" }
-    hour { "MyString" }
-    fit_unfit { "MyString" }
-    observation { "MyString" }
+    name { Faker::FunnyName.two_word_name }
+    address { Faker::Address.street_name }
+    work_or_study { 'study' }
+    customer_name { Faker::FunnyName.two_word_name }
+    date { Date.today }
+    hour { '10:00' }
+    fit_unfit { 'unfit' }
+    observation { Faker::Lorem.paragraph }
     disabled { false }
-    cro { "MyString" }
-    unfit_days { "MyString" }
-    user { nil }
+    cro { '102021' }
+    unfit_days { '1' }
+    user
   end
 end
