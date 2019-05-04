@@ -73,10 +73,21 @@
           </div>
         </div>
         
-        <% if customer.celphone.empty? %>
-        <div class="alert alert-warning" role="alert">
-          <strong>Aviso!</strong> não podemos enviar o SMS pois paciente não tem o celular cadastrado.
-        </div>
+        <% if customer.celphone.empty? and current_user.plan_status %>
+          <div class="alert alert-warning" role="alert">
+            <strong>Aviso!</strong> não podemos enviar o SMS pois paciente não tem o celular cadastrado.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% end %>
+
+        <% unless current_user.plan_status %>
+    
+            <div class="alert alert-secondary" role="alert">
+              <i class="fa fa-envelope-o"></i> Seu paciente pode ser lembrado da consulta por SMS caso você faça a nossa <%= link_to 'assinatura premium', dashboard_plans_path, target: '_blank', class: 'alert-link' %>.
+            </div>
+
         <% end %>
 
         <div class="modal-footer modal-footer-customers">
