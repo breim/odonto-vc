@@ -83,11 +83,16 @@
         <% end %>
 
         <% unless current_user.plan_status %>
-    
-            <div class="alert alert-secondary" role="alert">
-              <i class="fa fa-envelope-o"></i> Seu paciente pode ser lembrado da consulta por SMS caso você faça a nossa <%= link_to 'assinatura premium', dashboard_plans_path, target: '_blank', class: 'alert-link' %>.
-            </div>
+          <div class="alert alert-secondary" role="alert">
+            <i class="fa fa-envelope-o"></i> Seu paciente pode ser lembrado da consulta por SMS caso você faça a nossa <%= link_to 'assinatura premium', dashboard_plans_path, target: '_blank', class: 'alert-link' %>.
+          </div>
+        <% end %>
 
+
+        <% if @consultation.sms_sent %>
+          <div class="alert alert-success" role="alert">
+            <i class="fa fa-envelope-o"></i> SMS de lembrete da consulta enviado com sucesso <%= @consultation.try(:strftime, '%d/%m/%Y') %>
+          </div>
         <% end %>
 
         <div class="modal-footer modal-footer-customers">
