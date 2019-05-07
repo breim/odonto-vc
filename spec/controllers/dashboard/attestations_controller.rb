@@ -64,9 +64,9 @@ RSpec.describe Dashboard::AttestationsController, type: :controller do
   end
 
   describe 'delete #destroy' do
-    it 'disabled attestation with success' do
+    it 'deleted attestation with success' do
       delete :destroy, params: { id: attestation.id }
-      expect(assigns(:attestation).disabled).to eq(true)
+      expect(assigns(:attestation).deleted).to eq(true)
     end
   end
 end

@@ -9,7 +9,7 @@ class CreateAttestations < ActiveRecord::Migration[5.2]
       t.string :hour
       t.string :fit_unfit
       t.string :observation
-      t.boolean :disabled, default: false
+      t.boolean :deleted, default: false
       t.string :cro
       t.string :unfit_days
       t.belongs_to :user, foreign_key: true

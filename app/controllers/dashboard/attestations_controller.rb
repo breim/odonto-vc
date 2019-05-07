@@ -10,10 +10,10 @@ module Dashboard
 
     def index
       @attestations = if params[:search].present?
-                        Attestation.where(user_id: current_user.id, disabled: false).search(params[:search])
+                        Attestation.where(user_id: current_user.id, deleted: false).search(params[:search])
                                    .paginate(page: params[:page])
                       else
-                        Attestation.where(user_id: current_user.id, disabled: false).order(created_at: :desc)
+                        Attestation.where(user_id: current_user.id, deleted: false).order(created_at: :desc)
                                    .paginate(page: params[:page])
                       end
 
@@ -44,7 +44,7 @@ module Dashboard
     end
 
     def destroy
-      @attestation.update(disabled: true)
+      @attestation.update(deleted: true)
       respond_with(@attestation, location: dashboard_attestations_path)
     end
 

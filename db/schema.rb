@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_023139) do
     t.string "hour"
     t.string "fit_unfit"
     t.string "observation"
-    t.boolean "disabled", default: false
+    t.boolean "deleted", default: false
     t.string "cro"
     t.string "unfit_days"
     t.bigint "user_id"

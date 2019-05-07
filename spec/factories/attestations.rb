@@ -10,7 +10,7 @@ FactoryBot.define do
     hour { '10:00' }
     fit_unfit { 'unfit' }
     observation { Faker::Lorem.paragraph }
-    disabled { false }
+    deleted { false }
     cro { '102021' }
     unfit_days { '1' }
     user
