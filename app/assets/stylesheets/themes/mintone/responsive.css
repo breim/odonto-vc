@@ -26,7 +26,7 @@
 }
 
 @media (max-width: 991px){ 
-.mini-sidebar .sidebar-nav #sidebarnav>li>a {padding: 3px 20px;}
+.mini-sidebar .sidebar-nav #sidebarnav>li>a {padding: 9px 20px;}
 .pro-customtab li a.nav-link {padding:0 0 0 10px; font-size:14px;}
 .modal-body {padding:1rem}
 .modal-header {padding:2rem 2rem 0.5rem 1rem}
