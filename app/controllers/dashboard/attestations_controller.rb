@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Extend module
 module Dashboard
   # Controller
@@ -12,7 +14,7 @@ module Dashboard
                                    .paginate(page: params[:page])
                       else
                         Attestation.where(user_id: current_user.id, disabled: false).order(created_at: :desc)
-                                   .paginate(page: params[:page])                        
+                                   .paginate(page: params[:page])
                       end
 
       respond_with(:dashboard, @attestations)
