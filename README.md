@@ -25,7 +25,7 @@ Install dependencies
 cd odonto-vc && bundle install
 ```
 
-Configure your database and other env passwords(check example in: **application.example.yml**)
+Configure your database and other env passwords(check example in: **application.example.yml** )
 
 ```
 figaro install
