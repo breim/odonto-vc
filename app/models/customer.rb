@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
   before_save :build_cpf
   before_save :decode_base64_image
 
-  self.per_page = 25
+  self.per_page = 2
 
   include PgSearch
   pg_search_scope :search, against: %i[name celphone cpf],

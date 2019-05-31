@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :tickets
   has_many :plan_payments
   has_many :attestations
+  has_many :receipts
 
   before_create :build_token
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_023139) do
+ActiveRecord::Schema.define(version: 2019_05_21_013313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,22 @@ ActiveRecord::Schema.define(version: 2019_05_03_023139) do
     t.index ["user_id"], name: "index_plan_payments_on_user_id"
   end
 
+  create_table "receipts", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "customer_name"
+    t.string "customer_cpf"
+    t.decimal "total", precision: 14, scale: 2
+    t.string "services"
+    t.string "location"
+    t.date "date"
+    t.bigint "user_id"
+    t.boolean "deleted", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_receipts_on_user_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -127,6 +143,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_023139) do
     t.string "card_expiration"
     t.string "cro"
     t.string "address"
+    t.string "api_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -136,5 +153,6 @@ ActiveRecord::Schema.define(version: 2019_05_03_023139) do
   add_foreign_key "consultations", "users"
   add_foreign_key "customers", "users"
   add_foreign_key "plan_payments", "users"
+  add_foreign_key "receipts", "users"
   add_foreign_key "tickets", "users"
 end

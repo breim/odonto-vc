@@ -88,7 +88,6 @@
           </div>
         <% end %>
 
-
         <% if @consultation.sms_sent %>
           <div class="alert alert-success" role="alert">
             <i class="fa fa-envelope-o"></i> SMS de lembrete da consulta enviado com sucesso <%= @consultation.try(:strftime, '%d/%m/%Y') %>

@@ -1,0 +1,46 @@
+
+<% unless @receipts.empty? %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class=''>
+      <tr>
+        <th></th>
+        <th>Cliente</th>
+        <th>CPF</th>
+        <th>Total</th>
+        <th>Data</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @receipts.each do |receipt| %>
+      <tr>
+        <td><%= receipt.id %></td>
+        <td><%= receipt.customer_name %></td>
+        <td><%= receipt.customer_cpf %></td>
+        <td>R$ <%= receipt.total %></td>
+        <td><%= receipt.date.try(:strftime, '%d/%m/%Y') %></td>
+        <td><%= link_to 'Ver recibo', dashboard_receipt_path(receipt) %></td>
+        <td>
+          <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_dashboard_receipt_path(receipt), class: 'btn btn-sm btn-outline-primary' %>
+          <%= link_to "<i class='fa fa-trash'></i>".html_safe, dashboard_receipt_path(receipt), method: 'delete', data: { confirm: 'Você tem certeza ?' }, class: 'btn btn-sm btn-outline-danger' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% else %>
+  </br>
+  <% if params[:search] %>
+    <div class="text-center">
+      <h5>Não encontramos recibos de acordo com a busca</h5>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <h5>Você não tem recibos :/</h5>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render 'shared/paginate', collection: @receipts %>

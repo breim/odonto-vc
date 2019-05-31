@@ -7,7 +7,7 @@
           <h5>Plano Premium</h5>
           <p>Seu plano será renovado automaticamente no dia
             <strong><%= (current_user.plan_date + 1.month).try(:strftime, '%d/%m/%Y') %></strong>
-            e serão cobrados <strong>R$ <%= (ENV['plan_price'].to_f / 100).real %></strong>.
+            e serão cobrados <strong>R$ <%= ENV['plan_price'] %></strong>.
           </p>
 
           <%= link_to "CANCELAR PLANO", dashboard_plan_path(1), method: :delete, data: { confirm: "Você realmente quer cancelar o plano ?" }, class: 'btn btn-rounded waves-effect waves-light btn-outline-danger' %>
